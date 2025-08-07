@@ -1,7 +1,7 @@
 import { ComicRankApiResponse, ComicRankApiSuccessResponse } from '@/types/ranking';
 
 const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-domain.com' 
+  ? ''
   : 'http://localhost:3000';
 
 export class ApiError extends Error {
