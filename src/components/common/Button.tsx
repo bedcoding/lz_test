@@ -73,7 +73,7 @@ const StyledButton = styled.button<{
 }>`
   ${baseButtonStyles}
   
-  ${({ $variant, $active }) => {
+  ${({ $variant }) => {
     switch ($variant) {
       case 'primary':
         return primaryStyles;
