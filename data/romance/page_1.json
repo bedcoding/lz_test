@@ -1,0 +1,361 @@
+{
+  "hasNext": true,
+  "count": 100,
+  "data": [
+    {
+      "id": 5310249108766720,
+      "alias": "snail",
+      "title": "아가씨와 우렁총각",
+      "artists": [{ "name": "제이드", "role": "writer", "id": "jade" }],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 1,
+      "previousRank": 1,
+      "updatedAt": 1610007388299,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5310249108766720/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5459019290705920,
+      "alias": "ceos_crooked_love",
+      "title": "대표님의 삐뚤어진 사랑 [연재]",
+      "artists": [
+        { "name": "Hongshu", "role": "scripter", "id": "hongshu" },
+        { "name": "Rose Studio", "role": "painter", "id": "rosestudio" },
+        { "name": "Nianhuarexiao", "role": "original", "id": "nianhuarexiao" },
+        { "name": "스토리숲", "role": "publisher", "id": "storySoop" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 15,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 2,
+      "previousRank": 4,
+      "updatedAt": 1620023306380,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5459019290705920/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5849944865636352,
+      "alias": "pencil",
+      "title": "연필의 각도",
+      "artists": [{ "name": "홍자", "role": "writer", "id": "hongja" }],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 14,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 3,
+      "previousRank": 2,
+      "updatedAt": 1628154558737,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5849944865636352/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5564344987877376,
+      "alias": "i_have_a_baby",
+      "title": "아기가 생겼어요 [연재]",
+      "artists": [
+        { "name": "강기", "role": "writer", "id": "kangki" },
+        { "name": "이정", "role": "original", "id": "leejung" },
+        { "name": "재담미디어", "role": "publisher", "id": "jaedam" }
+      ],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 4,
+      "previousRank": 3,
+      "updatedAt": 1606719928639,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5564344987877376/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5162568727724032,
+      "alias": "bouquet",
+      "title": "못난이에게 꽃다발을",
+      "artists": [
+        { "name": "사쿠라 로쿠", "role": "writer", "id": "rokusakura" },
+        {
+          "name": "서울미디어코믹스",
+          "role": "publisher",
+          "id": "seoulmediacomics"
+        }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 5,
+      "previousRank": 690,
+      "updatedAt": 1626415009741,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5162568727724032/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5483951990046720,
+      "alias": "sultans_flower_re",
+      "title": "술탄의 꽃 [개정판]",
+      "artists": [
+        { "name": "꽁", "role": "painter", "id": "ggong" },
+        { "name": "가하 웹툰", "role": "label", "id": "gahawebtoon" },
+        { "name": "춈춈", "role": "original", "id": "chyomchyom" },
+        { "name": "도서출판 가하", "role": "publisher", "id": "gahabooks" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 6,
+      "previousRank": 6,
+      "updatedAt": 1631598913248,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5483951990046720/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6430096279011328,
+      "alias": "exonepick",
+      "title": "구최애로부터 비밀을 사수하라!",
+      "artists": [
+        { "name": "선마", "role": "scripter", "id": "sunma" },
+        { "name": "네치", "role": "painter", "id": "nechi" }
+      ],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 7,
+      "previousRank": 8,
+      "updatedAt": 1625537303392,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6430096279011328/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6170000663052288,
+      "alias": "limit",
+      "title": "신데렐라 리미트",
+      "artists": [{ "name": "깨알", "role": "writer", "id": "argok2009" }],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 8,
+      "previousRank": 117,
+      "updatedAt": 1621998410127,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6170000663052288/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6480790705209344,
+      "alias": "contract_wife",
+      "title": "속도위반 대표님과 계약 아내 [연재]",
+      "artists": [
+        { "name": "kkworld", "role": "painter", "id": "kkworld" },
+        { "name": "shibuciyuan", "role": "painter", "id": "shibuciyuan" },
+        { "name": "flower", "role": "original", "id": "flower" },
+        { "name": "스토리숲", "role": "publisher", "id": "storysoop" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 16,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 9,
+      "previousRank": 69,
+      "updatedAt": 1620005466771,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6480790705209344/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4907714540535808,
+      "alias": "story_of_anna",
+      "title": "안나 이야기",
+      "artists": [{ "name": "김지효", "role": "writer", "id": "kim_ji_hyo" }],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 29,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 10,
+      "previousRank": 55,
+      "updatedAt": 1622686784640,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.jpg?width=130"
+    },
+    {
+      "id": 272,
+      "alias": "woori",
+      "title": "우리사이느은",
+      "artists": [{ "name": "이연지", "role": "writer", "id": "leegreen" }],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 12,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 11,
+      "previousRank": 80,
+      "updatedAt": 1602323552147,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/272/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6694684605874176,
+      "alias": "alliwantis",
+      "title": "내가 원하는 건",
+      "artists": [{ "name": "정", "role": "writer", "id": "jung" }],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 60,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 12,
+      "previousRank": 7,
+      "updatedAt": 1611882753147,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6694684605874176/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4511761836933120,
+      "alias": "hard_to_say_love",
+      "title": "사랑이라 하기엔 기분 나빠",
+      "artists": [
+        { "name": "모구스", "role": "writer", "id": "mogusu" },
+        { "name": "레진코믹스", "role": "publisher", "id": "lezhincomics" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 13,
+      "previousRank": 56,
+      "updatedAt": 1629966790809,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4511761836933120/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4728647098630144,
+      "alias": "heydragon",
+      "title": "있잖아요 용님!",
+      "artists": [
+        { "name": "영현", "role": "writer", "id": "younghyun" },
+        { "name": "키다리스튜디오", "role": "publisher", "id": "kidaristudio" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 14,
+      "previousRank": 9,
+      "updatedAt": 1625459643566,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4728647098630144/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5912387426516992,
+      "alias": "between_30cm",
+      "title": "우리 사이 30cm",
+      "artists": [
+        { "name": "YUJU", "role": "writer", "id": "yuju" },
+        { "name": "재담미디어", "role": "publisher", "id": "jaedam" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 9,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 15,
+      "previousRank": 27,
+      "updatedAt": 1630391955180,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5912387426516992/images/tall.jpg?width=130"
+    },
+    {
+      "id": 18,
+      "alias": "giveme_ur_heart",
+      "title": "너의 HEART를 나에게 줄래?",
+      "artists": [{ "name": "비아이", "role": "writer", "id": "B_i" }],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 16,
+      "previousRank": 43,
+      "updatedAt": 1601537286472,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/18/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5662308507975680,
+      "alias": "hayandere",
+      "title": "하얀데레",
+      "artists": [
+        { "name": "남별", "role": "scripter", "id": "southstar" },
+        { "name": "프릿슈", "role": "painter", "id": "refia" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 7,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 17,
+      "previousRank": 14,
+      "updatedAt": 1612428328436,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5662308507975680/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5314337234812928,
+      "alias": "genderis_man",
+      "title": "젠더리스 남자에게 사랑받고 있습니다",
+      "artists": [
+        { "name": "타메코우", "role": "writer", "id": "tamekou" },
+        { "name": "AK 코믹스", "role": "label", "id": "akcomics" },
+        {
+          "name": "AK 커뮤니케이션즈",
+          "role": "publisher",
+          "id": "akcommunications"
+        }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 18,
+      "previousRank": 529,
+      "updatedAt": 1602487598708,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5314337234812928/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5905291473387520,
+      "alias": "human_pervert_rd",
+      "title": "어차피 인간은 다 변태야 [개정판]",
+      "artists": [
+        { "name": "장미", "role": "writer", "id": "jangmi" },
+        { "name": "위즈덤하우스", "role": "publisher", "id": "wisdomhouse" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 19,
+      "previousRank": 160,
+      "updatedAt": 1611897725426,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5905291473387520/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5950656923107328,
+      "alias": "1m",
+      "title": "1미터 사이",
+      "artists": [
+        { "name": "이은정", "role": "scripter", "id": "kitty" },
+        { "name": "김병관", "role": "painter", "id": "qud" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 14,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 20,
+      "previousRank": 18,
+      "updatedAt": 1623576754197,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5950656923107328/images/tall.jpg?width=130"
+    }
+  ]
+}

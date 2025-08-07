@@ -1,0 +1,378 @@
+{
+  "hasNext": true,
+  "count": 100,
+  "data": [
+    {
+      "id": 4864814520270848,
+      "alias": "black_empress",
+      "title": "검은머리 황녀님 [연재]",
+      "artists": [
+        { "name": "팡이", "role": "painter", "id": "pange" },
+        { "name": "엘리아냥", "role": "original", "id": "ellianyang" },
+        {
+          "name": "씨엔씨레볼루션㈜",
+          "role": "publisher",
+          "id": "cncrevolutioninc"
+        }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 41,
+      "previousRank": 167,
+      "updatedAt": 1617024184735,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4864814520270848/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5981436817702912,
+      "alias": "on_the_heel",
+      "title": "온 더 힐",
+      "artists": [
+        { "name": "장어진", "role": "writer", "id": "jangeojin" },
+        { "name": "지티이엔티", "role": "publisher", "id": "gtent" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 10,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 42,
+      "previousRank": 195,
+      "updatedAt": 1515991162615,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5981436817702912/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5452694002401280,
+      "alias": "bad_hip",
+      "title": "엉덩이가 잘못했네 [연재]",
+      "artists": [
+        { "name": "자몽사이다(유툰)", "role": "painter", "id": "jamongcider" },
+        { "name": "줄라이키스", "role": "original", "id": "julyakiss" },
+        { "name": "비브로스팀", "role": "publisher", "id": "vbrosteam" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 43,
+      "previousRank": 33,
+      "updatedAt": 1628056571746,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5452694002401280/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6732978288328704,
+      "alias": "moneylover",
+      "title": "너의 돈이 보여",
+      "artists": [
+        { "name": "S리아", "role": "scripter", "id": "sreah" },
+        { "name": "민국23", "role": "painter", "id": "minguk23" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 44,
+      "previousRank": 35,
+      "updatedAt": 1534398367209,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6732978288328704/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6531477824667648,
+      "alias": "sflower_15",
+      "title": "S플라워[개정판]",
+      "artists": [{ "name": "진미", "role": "writer", "id": "jinmi" }],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 45,
+      "previousRank": 26,
+      "updatedAt": 1617357490370,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6531477824667648/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4562605903773696,
+      "alias": "queens_secret_class",
+      "title": "황비님의 비밀수업 [연재]",
+      "artists": [
+        { "name": "한세람", "role": "scripter", "id": "hanseram" },
+        { "name": "톰", "role": "painter", "id": "tom" },
+        { "name": "유주얼미디어", "role": "publisher", "id": "ujewelmedia" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 5,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 46,
+      "previousRank": 39,
+      "updatedAt": 1617023222360,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4562605903773696/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5068213149040640,
+      "alias": "happy_ending_life",
+      "title": "목숨걸고 해피엔딩",
+      "artists": [
+        { "name": "롱롱", "role": "painter", "id": "rongrong" },
+        { "name": "꽃닢", "role": "original", "id": "petal" },
+        { "name": "엠스토리허브", "role": "publisher", "id": "mstoryhub" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 47,
+      "previousRank": 751,
+      "updatedAt": 1619059508320,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5068213149040640/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5039365024382976,
+      "alias": "day",
+      "title": "벌건 대낮",
+      "artists": [{ "name": "최용성", "role": "writer", "id": "coast89" }],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 9,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 48,
+      "previousRank": 28,
+      "updatedAt": 1589961519688,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5039365024382976/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4755963969798144,
+      "alias": "in_a_looked_room",
+      "title": "잠겨진 양호실에서 선생님과",
+      "artists": [
+        { "name": "카놀라 유", "role": "writer", "id": "canolayu" },
+        { "name": "미즈", "role": "label", "id": "miz" },
+        { "name": "넥스큐브", "role": "publisher", "id": "nexcube" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 49,
+      "previousRank": 83,
+      "updatedAt": 1609982435763,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4755963969798144/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4786035588202496,
+      "alias": "black_dragon_love",
+      "title": "흑룡연인",
+      "artists": [
+        { "name": "주이원", "role": "writer", "id": "jooiwon" },
+        { "name": "키다리스튜디오", "role": "publisher", "id": "kidaristudio" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 50,
+      "previousRank": 178,
+      "updatedAt": 1610943310603,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4786035588202496/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4535078004785152,
+      "alias": "dog_die",
+      "title": "개기면 죽는다",
+      "artists": [
+        { "name": "왕기대", "role": "scripter", "id": "wanggidae" },
+        { "name": "마야", "role": "painter", "id": "maya" },
+        { "name": "키다리스튜디오", "role": "publisher", "id": "kidaristudio" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 51,
+      "previousRank": 87,
+      "updatedAt": 1619579409378,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4535078004785152/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5023315744063488,
+      "alias": "office_romance",
+      "title": "이 회사에 좋아하는 사람이 있습니다",
+      "artists": [
+        {
+          "name": "에노모토 아카마루",
+          "role": "writer",
+          "id": "akamaruenomoto"
+        },
+        { "name": "대원씨아이", "role": "publisher", "id": "dwci" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 52,
+      "previousRank": 52,
+      "updatedAt": 1611298014877,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5023315744063488/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6494986018816000,
+      "alias": "princess_break_marriage",
+      "title": "왕녀님은 파혼하고 싶어",
+      "artists": [
+        { "name": "Mii", "role": "writer", "id": "mii" },
+        { "name": "키다리스튜디오", "role": "publisher", "id": "kidaristudio" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 53,
+      "previousRank": 88,
+      "updatedAt": 1621326350826,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6494986018816000/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6476282696368128,
+      "alias": "archers_promise",
+      "title": "궁서의 약속 -위장 Ω(오메가)- [연재]",
+      "artists": [
+        { "name": "시라이시 유키", "role": "writer", "id": "yukisshiraishi" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 54,
+      "previousRank": 17,
+      "updatedAt": 1627355562558,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6476282696368128/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5887090871894016,
+      "alias": "sweet_kiss_sigh",
+      "title": "빠져드는 한숨에 달콤한 키스",
+      "artists": [
+        { "name": "키사라기 히이로", "role": "writer", "id": "kisaragihiiro" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 55,
+      "previousRank": 317,
+      "updatedAt": 1559207088548,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5887090871894016/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4989547772706816,
+      "alias": "immoral_night_15",
+      "title": "배덕의 밤 [개정판]",
+      "artists": [
+        { "name": "kk", "role": "painter", "id": "kk" },
+        { "name": "가하 웹툰", "role": "label", "id": "gahawebtoon" },
+        { "name": "팽유정", "role": "original", "id": "paeng" },
+        { "name": "도서출판 가하", "role": "publisher", "id": "gahabooks" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 56,
+      "previousRank": 5,
+      "updatedAt": 1625739135347,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4989547772706816/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5038595422617600,
+      "alias": "kitty_bride",
+      "title": "고양이 신부",
+      "artists": [
+        { "name": "망가", "role": "scripter", "id": "manga" },
+        { "name": "잎", "role": "scripter", "id": "lip" },
+        { "name": "dite", "role": "painter", "id": "dite" },
+        { "name": "MA", "role": "painter", "id": "ma" },
+        { "name": "다온스튜디오", "role": "label", "id": "daonstudio" },
+        {
+          "name": "다온크리에이티브",
+          "role": "publisher",
+          "id": "daoncreative"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 57,
+      "previousRank": 704,
+      "updatedAt": 1631518399530,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5038595422617600/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6023976890138624,
+      "alias": "summer_winter",
+      "title": "한여름 이겨울",
+      "artists": [{ "name": "군밤", "role": "writer", "id": "gb" }],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 58,
+      "previousRank": 113,
+      "updatedAt": 1554343203890,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6023976890138624/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5664587191156736,
+      "alias": "parasite",
+      "title": "기생충",
+      "artists": [{ "name": "김지효", "role": "writer", "id": "kim_ji_hyo" }],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 8,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 59,
+      "previousRank": 118,
+      "updatedAt": 1553742006975,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5664587191156736/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6561586036146176,
+      "alias": "hunterlover",
+      "title": "헌터의 약혼자로 살아남기",
+      "artists": [
+        { "name": "서하", "role": "scripter", "id": "seoha" },
+        { "name": "은나", "role": "painter", "id": "eunna" }
+      ],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 60,
+      "previousRank": 86,
+      "updatedAt": 1610939554332,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6561586036146176/images/tall.jpg?width=130"
+    }
+  ]
+}

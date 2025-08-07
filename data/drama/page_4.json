@@ -1,0 +1,443 @@
+{
+  "hasNext": true,
+  "count": 100,
+  "data": [
+    {
+      "id": 200,
+      "alias": "rebound_ball",
+      "title": "튄 공",
+      "artists": [
+        { "name": "이삼", "role": "writer", "email": null, "id": "no23" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 22,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 61,
+      "previousRank": 60,
+      "updatedAt": 1546497839690,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/200/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5367809780613120,
+      "alias": "by_myself",
+      "title": "홀로",
+      "artists": [
+        { "name": "이삼", "role": "writer", "email": null, "id": "no23" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 62,
+      "previousRank": 61,
+      "updatedAt": 1575531526544,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5367809780613120/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6,
+      "alias": "m_street_no9",
+      "title": "마들레느가 9번지",
+      "artists": [
+        { "name": "진혜리", "role": "writer", "email": null, "id": "jhlart" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 261,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 63,
+      "previousRank": 12,
+      "updatedAt": 1643265816537,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5988270749908992,
+      "alias": "bl",
+      "title": "튀어나왔어요, BL만화!",
+      "artists": [
+        { "name": "마롭-믹", "role": "writer", "email": null, "id": "marobmik" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 64,
+      "previousRank": 63,
+      "updatedAt": 1631260814642,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5988270749908992/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6471369140338688,
+      "alias": "engagement",
+      "title": "약혼자는 동거중",
+      "artists": [
+        {
+          "name": "임달영",
+          "role": "scripter",
+          "email": null,
+          "id": "imdalyoung"
+        },
+        {
+          "name": "이수현",
+          "role": "painter",
+          "email": null,
+          "id": "leesoohyun"
+        },
+        {
+          "name": "디투컴퍼니",
+          "role": "label",
+          "email": null,
+          "id": "D2Company"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 65,
+      "previousRank": 64,
+      "updatedAt": 1577408940674,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6471369140338688/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4981925070569472,
+      "alias": "fallthrough",
+      "title": "들개-불발",
+      "artists": [
+        { "name": "용현", "role": "scripter", "email": null, "id": "yonghyun" },
+        { "name": "김정현", "role": "painter", "email": null, "id": "kino917" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 7,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 66,
+      "previousRank": 65,
+      "updatedAt": 1622702376475,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4981925070569472/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4995133933682688,
+      "alias": "timeline",
+      "title": "타임라인",
+      "artists": [
+        { "name": "헛둘", "role": "writer", "email": null, "id": "extaxi" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 67,
+      "previousRank": 67,
+      "updatedAt": 1661760911705,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4995133933682688/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6013643236114432,
+      "alias": "our_home",
+      "title": "작전본부: 우리 집",
+      "artists": [
+        { "name": "청혈구", "role": "writer", "email": null, "id": "bbc" }
+      ],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 49,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 68,
+      "previousRank": 15,
+      "updatedAt": 1653010695440,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6013643236114432/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5154759719256064,
+      "alias": "2nd_manhwaking_pandoras_choice",
+      "title": "판도라의 선택 [제2회 세계만화공모전 수상작]",
+      "artists": [
+        { "name": "유도리", "role": "writer", "email": null, "id": "yudori" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 69,
+      "previousRank": 69,
+      "updatedAt": 1520223483114,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5154759719256064/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5744074253533184,
+      "alias": "boss_neighbor",
+      "title": "사장님은 이웃사촌",
+      "artists": [
+        {
+          "name": "임달영",
+          "role": "scripter",
+          "email": null,
+          "id": "imdalyoung"
+        },
+        {
+          "name": "심원용",
+          "role": "painter",
+          "email": null,
+          "id": "Sim Won-yong"
+        },
+        {
+          "name": "디투컴퍼니",
+          "role": "publisher",
+          "email": null,
+          "id": "D2Company"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 70,
+      "previousRank": 29,
+      "updatedAt": 1560489820830,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5744074253533184/images/tall.jpg?width=130"
+    },
+    {
+      "id": 10,
+      "alias": "heima",
+      "title": "헤이마",
+      "artists": [
+        {
+          "name": "작업실 시보",
+          "role": "writer",
+          "email": null,
+          "id": "studio_sibo"
+        }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 71,
+      "previousRank": 70,
+      "updatedAt": 1540264960401,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/10/images/tall.jpg?width=130"
+    },
+    {
+      "id": 33,
+      "alias": "gahu",
+      "title": "가후전",
+      "artists": [
+        { "name": "마사토끼", "role": "scripter", "email": null, "id": "masa" },
+        { "name": "배민수", "role": "painter", "email": null, "id": "brave" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 72,
+      "previousRank": 71,
+      "updatedAt": 1550208017474,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/33/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5939837511663616,
+      "alias": "fishnight",
+      "title": "물고기의 밤",
+      "artists": [
+        { "name": "정은수", "role": "writer", "email": null, "id": "jungeunsu" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 73,
+      "previousRank": 72,
+      "updatedAt": 1541646002872,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5939837511663616/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5019053195001856,
+      "alias": "gods_glue",
+      "title": "신의 접착제",
+      "artists": [
+        { "name": "기드온", "role": "writer", "email": null, "id": "gideon" },
+        {
+          "name": "서울미디어코믹스",
+          "role": "publisher",
+          "email": null,
+          "id": "seoulmediacomics"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 74,
+      "previousRank": 73,
+      "updatedAt": 1573551093653,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5019053195001856/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5057602952429568,
+      "alias": "sophomoricillness",
+      "title": "최강! 중2병 그녀",
+      "artists": [
+        { "name": "영식", "role": "writer", "email": null, "id": "0sick" }
+      ],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 75,
+      "previousRank": 74,
+      "updatedAt": 1649322533784,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5057602952429568/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5123868419817472,
+      "alias": "revenge_of_wife",
+      "title": "아내의 복수를 대신하다",
+      "artists": [
+        { "name": "밀헨", "role": "scripter", "email": null, "id": "milhen" },
+        { "name": "매타", "role": "painter", "email": null, "id": "maeta" },
+        {
+          "name": "디투컴퍼니",
+          "role": "publisher",
+          "email": null,
+          "id": "d2company"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 76,
+      "previousRank": 75,
+      "updatedAt": 1554870845452,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5123868419817472/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4529839812378624,
+      "alias": "snowingflower",
+      "title": "눈이 나려 꽃 [연재]",
+      "artists": [
+        {
+          "name": "임해연",
+          "role": "writer",
+          "email": null,
+          "id": "yimhaeyeon"
+        }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "scheduled",
+      "isPrint": true,
+      "currentRank": 77,
+      "previousRank": 77,
+      "updatedAt": 1623208069752,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4529839812378624/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6262255336620032,
+      "alias": "the_golden_hour",
+      "title": "골든아워",
+      "artists": [
+        {
+          "name": "박수빈",
+          "role": "scripter",
+          "email": null,
+          "id": "SoobinP"
+        },
+        {
+          "name": "정은민",
+          "role": "scripter",
+          "email": null,
+          "id": "EunminJ"
+        },
+        { "name": "박형규", "role": "painter", "email": null, "id": "hkpark" },
+        { "name": "이국종", "role": "original", "email": null, "id": "hbooks" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 31,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 78,
+      "previousRank": 78,
+      "updatedAt": 1670572427335,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6262255336620032/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6099425048199168,
+      "alias": "soyang_haechi",
+      "title": "소양공주와 해치",
+      "artists": [
+        {
+          "name": "스튜디오 웨이브",
+          "role": "writer",
+          "email": null,
+          "id": "studioweiib"
+        }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 79,
+      "previousRank": 79,
+      "updatedAt": 1662365400893,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6099425048199168/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5016813088342016,
+      "alias": "saram",
+      "title": "사람의 사이로",
+      "artists": [
+        { "name": "김보통", "role": "writer", "email": null, "id": "kimbotong" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 36,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 80,
+      "previousRank": 80,
+      "updatedAt": 1663742901519,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5016813088342016/images/tall.jpg?width=130"
+    }
+  ]
+}

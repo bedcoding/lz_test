@@ -1,0 +1,384 @@
+{
+  "hasNext": true,
+  "count": 100,
+  "data": [
+    {
+      "id": 6685305436700672,
+      "alias": "obscene_houseplay_15",
+      "title": "음란한 소꿉장난[개정판]",
+      "artists": [
+        { "name": "누끼", "role": "painter", "id": "nooki" },
+        { "name": "이미지프레임", "role": "label", "id": "imageframe" },
+        { "name": "양과람", "role": "original", "id": "yangwaram" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 61,
+      "previousRank": 40,
+      "updatedAt": 1617599477796,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6685305436700672/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5874080986038272,
+      "alias": "cheongru_opera",
+      "title": "청루 오페라",
+      "artists": [
+        {
+          "name": "사쿠라코우지 카노코",
+          "role": "writer",
+          "id": "sakurakoujikanoko"
+        },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 62,
+      "previousRank": 251,
+      "updatedAt": 1556280202533,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5874080986038272/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4507385512394752,
+      "alias": "teamleader_but_intern",
+      "title": "팀장이지만 인턴입니다",
+      "artists": [
+        { "name": "오마토", "role": "scripter", "id": "omato" },
+        { "name": "깍두", "role": "painter", "id": "ggakdoo" },
+        { "name": "다온스튜디오", "role": "label", "id": "daonstudio" },
+        {
+          "name": "다온크리에이티브",
+          "role": "publisher",
+          "id": "daoncreative"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 63,
+      "previousRank": 281,
+      "updatedAt": 1630390775199,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4507385512394752/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5409586549424128,
+      "alias": "honey_come_honey",
+      "title": "허니 컴 허니",
+      "artists": [
+        { "name": "시라이시 유키", "role": "writer", "id": "yukishiraishi" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 64,
+      "previousRank": 329,
+      "updatedAt": 1597918798805,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5409586549424128/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4613987880992768,
+      "alias": "wickedwoman",
+      "title": "이번 생은 악녀로 살겠습니다 [연재]",
+      "artists": [
+        { "name": "black", "role": "writer", "id": "black" },
+        { "name": "넥스큐브", "role": "publisher", "id": "nexcube" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 65,
+      "previousRank": 334,
+      "updatedAt": 1626751288663,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4613987880992768/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4801392898801664,
+      "alias": "rosy_promises",
+      "title": "장밋빛의 약속 [연재]",
+      "artists": [
+        { "name": "미야사카 카호", "role": "writer", "id": "miyasakakaho" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 66,
+      "previousRank": 445,
+      "updatedAt": 1627986132477,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4801392898801664/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5408762474528768,
+      "alias": "17_livetogether",
+      "title": "17세, 오늘부터 동거 시작합니다!",
+      "artists": [
+        { "name": "모모타 아코", "role": "scripter", "id": "momotaako" },
+        { "name": "우로코", "role": "painter", "id": "uroco" },
+        { "name": "미즈", "role": "label", "id": "miz" },
+        { "name": "넥스큐브", "role": "publisher", "id": "nexcube" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 67,
+      "previousRank": 44,
+      "updatedAt": 1619579003874,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5408762474528768/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5274670161854464,
+      "alias": "merry_go_round",
+      "title": "메리 고 라운드",
+      "artists": [{ "name": "나솔", "role": "writer", "id": "nasol" }],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 68,
+      "previousRank": 20,
+      "updatedAt": 1608254172775,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5274670161854464/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6575005276635136,
+      "alias": "my_witch",
+      "title": "나의 마녀",
+      "artists": [
+        { "name": "해윤", "role": "scripter", "id": "haeyoon" },
+        { "name": "Mas", "role": "painter", "id": "mas" },
+        { "name": "북큐브", "role": "label", "id": "bookcube" },
+        {
+          "name": "북큐브네트웍스",
+          "role": "publisher",
+          "id": "bookcubenetworks"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 69,
+      "previousRank": 23,
+      "updatedAt": 1601272716642,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6575005276635136/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4811166890655744,
+      "alias": "dokkaebis_bird_re",
+      "title": "상냥한 도깨비의 새 [개정판]",
+      "artists": [
+        { "name": "에이비", "role": "scripter", "id": "ab" },
+        { "name": "8 cat", "role": "painter", "id": "8cat" },
+        { "name": "블루픽스튜디오", "role": "label", "id": "bluepicstudio" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 70,
+      "previousRank": 46,
+      "updatedAt": 1626229657410,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4811166890655744/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4608024776867840,
+      "alias": "101_heroine",
+      "title": "101번째 여주인공",
+      "artists": [
+        { "name": "스튜디오 디", "role": "writer", "id": "studiod" },
+        { "name": "메나닉", "role": "original", "id": "menanic" },
+        { "name": "대원씨아이", "role": "publisher", "id": "dwci" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 71,
+      "previousRank": 229,
+      "updatedAt": 1617023886469,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4608024776867840/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4923723713937408,
+      "alias": "how_to_seduce_him",
+      "title": "남주를 공략하는 방법 [연재]",
+      "artists": [
+        { "name": "희열탁마", "role": "writer", "id": "huiyeoltakma" },
+        { "name": "비브로스팀", "role": "publisher", "id": "vbrosteam" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 72,
+      "previousRank": 237,
+      "updatedAt": 1590479829836,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4923723713937408/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5038297021743104,
+      "alias": "five_equal_parts",
+      "title": "5등분의 신부",
+      "artists": [
+        { "name": "하루바 네기", "role": "writer", "id": "negiharuba" },
+        { "name": "학산문화사", "role": "publisher", "id": "haksan" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 73,
+      "previousRank": 97,
+      "updatedAt": 1604555212438,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5038297021743104/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4692872177516544,
+      "alias": "midday_meteor",
+      "title": "한낮의 유성",
+      "artists": [
+        { "name": "야마모리 미카", "role": "writer", "id": "yamamorimika" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 74,
+      "previousRank": 413,
+      "updatedAt": 1564377660479,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4692872177516544/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6617147453538304,
+      "alias": "ninkoi",
+      "title": "오늘부터 너의 닌자",
+      "artists": [
+        { "name": "스즈키 줄리에타", "role": "writer", "id": "juliettasuzuki" },
+        { "name": "학산문화사", "role": "publisher", "id": "haksan" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 75,
+      "previousRank": 476,
+      "updatedAt": 1627527371611,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6617147453538304/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6475751743619072,
+      "alias": "backstage_kiss_scene",
+      "title": "백스테이지 키스신",
+      "artists": [
+        { "name": "수정과", "role": "writer", "id": "soojeonggwa" },
+        { "name": "최도비", "role": "writer", "id": "choidobi" },
+        { "name": "스토리위즈", "role": "publisher", "id": "storywiz" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 9,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 76,
+      "previousRank": 79,
+      "updatedAt": 1630993782257,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6475751743619072/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4986858015883264,
+      "alias": "contractual_marriage_ceo",
+      "title": "대표님과의 계약결혼",
+      "artists": [
+        { "name": "animation Dong", "role": "writer", "id": "animationdong" },
+        { "name": "Weibo Comics", "role": "writer", "id": "weibocomics" },
+        { "name": "엠젯패밀리", "role": "publisher", "id": "mzfamily" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 77,
+      "previousRank": 634,
+      "updatedAt": 1624861622521,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4986858015883264/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6606572140167168,
+      "alias": "vice_president",
+      "title": "거만한 부사장에게 잡혔습니다",
+      "artists": [
+        { "name": "이시카와 유키", "role": "scripter", "id": "yukiishikawa" },
+        { "name": "모치즈키 사나", "role": "painter", "id": "sanamochizuki" },
+        { "name": "지티이엔티", "role": "publisher", "id": "gtent" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 78,
+      "previousRank": 916,
+      "updatedAt": 1620118211510,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6606572140167168/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6222637011828736,
+      "alias": "secretmylove",
+      "title": "비밀스러운 짝사랑",
+      "artists": [{ "name": "정", "role": "writer", "id": "jung" }],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 79,
+      "previousRank": 107,
+      "updatedAt": 1621998422401,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6222637011828736/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5613460917846016,
+      "alias": "mangoseed",
+      "title": "망고의 뼈",
+      "artists": [
+        { "name": "골드키위새", "role": "scripter", "id": "goldkiwi" },
+        { "name": "넋부자들", "role": "painter", "id": "four_rich" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 80,
+      "previousRank": 67,
+      "updatedAt": 1544065200786,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5613460917846016/images/tall.jpg?width=130"
+    }
+  ]
+}

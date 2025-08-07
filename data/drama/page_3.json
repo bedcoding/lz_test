@@ -1,0 +1,408 @@
+{
+  "hasNext": true,
+  "count": 100,
+  "data": [
+    {
+      "id": 6624158499995648,
+      "alias": "raspberry",
+      "title": "라즈베리 샌드위치",
+      "artists": [
+        { "name": "차우민", "role": "writer", "email": null, "id": "chaumin" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 41,
+      "previousRank": 41,
+      "updatedAt": 1626418084248,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6624158499995648/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5784184712069120,
+      "alias": "odyssey",
+      "title": "오디세이",
+      "artists": [
+        { "name": "갈로아", "role": "writer", "email": null, "id": "Galois" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "w",
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 42,
+      "previousRank": 42,
+      "updatedAt": 1542855607990,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5784184712069120/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5771872688144384,
+      "alias": "rookie",
+      "title": "초년의 맛",
+      "artists": [
+        { "name": "앵무", "role": "writer", "email": null, "id": "vnddjs" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "i",
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 43,
+      "previousRank": 43,
+      "updatedAt": 1602321641534,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5771872688144384/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5835837207216128,
+      "alias": "private",
+      "title": "볕내",
+      "artists": [
+        { "name": "박혜민", "role": "writer", "email": null, "id": "hyemin" }
+      ],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "i",
+      "freedEpisodeSize": 12,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 44,
+      "previousRank": 44,
+      "updatedAt": 1578041704368,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5835837207216128/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5229324152864768,
+      "alias": "underpainting",
+      "title": "언더페인팅",
+      "artists": [
+        { "name": "내리", "role": "writer", "email": null, "id": "nary" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 45,
+      "previousRank": 45,
+      "updatedAt": 1537412401767,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5229324152864768/images/tall.jpg?width=130"
+    },
+    {
+      "id": 313,
+      "alias": "girlgongmyung",
+      "title": "여자 제갈량",
+      "artists": [
+        { "name": "김달", "role": "writer", "email": null, "id": "kimdal" }
+      ],
+      "schedule": { "periods": ["SAT"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 46,
+      "previousRank": 46,
+      "updatedAt": 1639039109200,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/313/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4540744709832704,
+      "alias": "sea_to_the_boy",
+      "title": "바다가 소년에게",
+      "artists": [
+        {
+          "name": "이현민",
+          "role": "scripter",
+          "email": null,
+          "id": "hyunmin"
+        },
+        {
+          "name": "이진영",
+          "role": "painter",
+          "email": null,
+          "id": "leejinyoung"
+        },
+        {
+          "name": "JQ스튜디오",
+          "role": "publisher",
+          "email": null,
+          "id": "jqstudio"
+        }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 47,
+      "previousRank": 48,
+      "updatedAt": 1622465438202,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4540744709832704/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5004416026673152,
+      "alias": "little_castle",
+      "title": "작은 성 : 시들지 않는 꽃",
+      "artists": [
+        { "name": "마윤", "role": "writer", "email": null, "id": "mayoon" }
+      ],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 7,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 48,
+      "previousRank": 50,
+      "updatedAt": 1520223477488,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5004416026673152/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4865266188943360,
+      "alias": "qr",
+      "title": "배달부들",
+      "artists": [
+        { "name": "우주", "role": "writer", "email": null, "id": "3114" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 49,
+      "previousRank": 51,
+      "updatedAt": 1641454989965,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4865266188943360/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6647348622786560,
+      "alias": "makeup_artist_in_chosun",
+      "title": "매분구",
+      "artists": [
+        { "name": "요신", "role": "scripter", "email": null, "id": "yosin" },
+        {
+          "name": "배로빈",
+          "role": "painter",
+          "email": null,
+          "id": "baerobin"
+        },
+        {
+          "name": "키다리스튜디오",
+          "role": "publisher",
+          "email": null,
+          "id": "kidaristudio"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 50,
+      "previousRank": 52,
+      "updatedAt": 1659414999293,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6647348622786560/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4866977410056192,
+      "alias": "lopamudra",
+      "title": "카페 로파무드라",
+      "artists": [
+        {
+          "name": "언발란스",
+          "role": "writer",
+          "email": null,
+          "id": "unbalance"
+        }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "w",
+      "freedEpisodeSize": 8,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 51,
+      "previousRank": 53,
+      "updatedAt": 1528180680718,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4866977410056192/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4767600603561984,
+      "alias": "spys",
+      "title": "조국과 민족",
+      "artists": [
+        { "name": "강태진", "role": "writer", "email": null, "id": "bbanss" }
+      ],
+      "schedule": { "periods": ["FRI"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "w",
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 52,
+      "previousRank": 27,
+      "updatedAt": 1661761631193,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4767600603561984/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5072753211342848,
+      "alias": "sheela_gun",
+      "title": "쉴라 건",
+      "artists": [
+        { "name": "마사토끼", "role": "scripter", "email": null, "id": "masa" },
+        { "name": "밀", "role": "painter", "email": null, "id": "meal" }
+      ],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 53,
+      "previousRank": 54,
+      "updatedAt": 1554701675940,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5072753211342848/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5714360039440384,
+      "alias": "gentleman",
+      "title": "명동젠틀맨",
+      "artists": [
+        {
+          "name": "미스와플",
+          "role": "scripter",
+          "email": null,
+          "id": "misswaffle"
+        },
+        { "name": "직가", "role": "painter", "email": null, "id": "jikka" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 10,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 54,
+      "previousRank": 55,
+      "updatedAt": 1664956122317,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5714360039440384/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4749772755894272,
+      "alias": "insaeyes",
+      "title": "인사의 눈",
+      "artists": [
+        { "name": "도국", "role": "writer", "email": null, "id": "iqzeo619" }
+      ],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 55,
+      "previousRank": 56,
+      "updatedAt": 1644820049461,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4749772755894272/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5413693209968640,
+      "alias": "genie",
+      "title": "당신의 지니",
+      "artists": [
+        { "name": "임현정", "role": "writer", "email": null, "id": "maz7112" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 8,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 56,
+      "previousRank": 57,
+      "updatedAt": 1653906998758,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5413693209968640/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6395077662867456,
+      "alias": "hirugao",
+      "title": "메꽃 ~오후 3시의 연인들~",
+      "artists": [
+        { "name": "김정현", "role": "writer", "email": null, "id": "kino917" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 57,
+      "previousRank": 58,
+      "updatedAt": 1556858083856,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6395077662867456/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5624953393643520,
+      "alias": "kuhakuki",
+      "title": "공백기",
+      "artists": [
+        { "name": "전민지", "role": "writer", "email": null, "id": "junminji" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 14,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 58,
+      "previousRank": 59,
+      "updatedAt": 1612427925510,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5624953393643520/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4821808825892864,
+      "alias": "sangsangdang",
+      "title": "상상당 한의원",
+      "artists": [
+        { "name": "서영애", "role": "writer", "email": null, "id": "joanmiro" }
+      ],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "iw",
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 59,
+      "previousRank": 28,
+      "updatedAt": 1646707861959,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4821808825892864/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6575268919574528,
+      "alias": "how_to_live",
+      "title": "올바른 인생을 살아가는 법",
+      "artists": [
+        { "name": "마사토끼", "role": "scripter", "email": null, "id": "masa" },
+        { "name": "김빛", "role": "painter", "email": null, "id": "kimbit" }
+      ],
+      "schedule": { "periods": ["THU"], "anchor": 0 },
+      "genres": ["drama"],
+      "badges": "",
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 60,
+      "previousRank": 22,
+      "updatedAt": 1666575438848,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6575268919574528/images/tall.jpg?width=130"
+    }
+  ]
+}

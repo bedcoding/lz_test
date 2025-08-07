@@ -1,0 +1,367 @@
+{
+  "hasNext": false,
+  "count": 100,
+  "data": [
+    {
+      "id": 5382463174868992,
+      "alias": "oneplusone",
+      "title": "1 더하기 1은",
+      "artists": [{ "name": "소루", "role": "writer", "id": "soru" }],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 81,
+      "previousRank": 81,
+      "updatedAt": 1625022219927,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5382463174868992/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5847030093185024,
+      "alias": "cute_jung",
+      "title": "잔망스러운 정주임",
+      "artists": [
+        { "name": "이현민", "role": "scripter", "id": "hyunmin" },
+        { "name": "miyune", "role": "painter", "id": "miyune" },
+        { "name": "JQ스튜디오", "role": "publisher", "id": "jqstudio" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 16,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 82,
+      "previousRank": 45,
+      "updatedAt": 1610943112320,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5847030093185024/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5059460702011392,
+      "alias": "685",
+      "title": "685일",
+      "artists": [{ "name": "새얀", "role": "writer", "id": "seyean" }],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 8,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 83,
+      "previousRank": 49,
+      "updatedAt": 1606983467727,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5059460702011392/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6131691861311488,
+      "alias": "girl_birth",
+      "title": "탄생소녀",
+      "artists": [
+        { "name": "애플링", "role": "scripter", "id": "kyokyokyo" },
+        { "name": "뿔사슴", "role": "painter", "id": "antlerdeer" }
+      ],
+      "schedule": { "periods": ["WED"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 5,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 84,
+      "previousRank": 21,
+      "updatedAt": 1544065200786,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6131691861311488/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6466786480095232,
+      "alias": "otakoi",
+      "title": "오타쿠에게 사랑은 어려워",
+      "artists": [
+        { "name": "후지타", "role": "writer", "id": "fujita" },
+        { "name": "레진코믹스", "role": "publisher", "id": "lezhincomics" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "scheduled",
+      "isPrint": false,
+      "currentRank": 85,
+      "previousRank": 82,
+      "updatedAt": 1626671868338,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6466786480095232/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6461632918126592,
+      "alias": "space",
+      "title": "우주인(Would you in?)",
+      "artists": [{ "name": "피티", "role": "writer", "id": "peatea" }],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 6,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 86,
+      "previousRank": 122,
+      "updatedAt": 1610005817868,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6461632918126592/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5943773066559488,
+      "alias": "christmas_in_the_elevator",
+      "title": "엘리베이터에서 하룻밤",
+      "artists": [{ "name": "김지효", "role": "writer", "id": "kim_ji_hyo" }],
+      "schedule": { "periods": ["MON"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 87,
+      "previousRank": 50,
+      "updatedAt": 1550042743798,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5943773066559488/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6066872002936832,
+      "alias": "xx_teacher",
+      "title": "선생님, xx라는 게 진짜예요?",
+      "artists": [
+        { "name": "와타세 하나", "role": "writer", "id": "hanawatase" },
+        { "name": "미즈", "role": "label", "id": "miz" },
+        { "name": "넥스큐브", "role": "publisher", "id": "nexcube" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 88,
+      "previousRank": 133,
+      "updatedAt": 1614143327298,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6066872002936832/images/tall.jpg?width=130"
+    },
+    {
+      "id": 55,
+      "alias": "musician",
+      "title": "뮤지션",
+      "artists": [{ "name": "단추", "role": "writer", "id": "button" }],
+      "schedule": { "periods": ["SUN"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 9,
+      "contentsState": "completed",
+      "isPrint": false,
+      "currentRank": 89,
+      "previousRank": 85,
+      "updatedAt": 1550051611923,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/55/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6069041722294272,
+      "alias": "av_writer",
+      "title": "경험은 있어야죠, 작가님!",
+      "artists": [
+        { "name": "카나모리 케이타", "role": "writer", "id": "keitakanamori" },
+        { "name": "미즈", "role": "label", "id": "miz" },
+        { "name": "넥스큐브", "role": "publisher", "id": "nexcube" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 90,
+      "previousRank": 152,
+      "updatedAt": 1614143194620,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6069041722294272/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4866953452781568,
+      "alias": "queen_of_other_world",
+      "title": "이세계의 황비",
+      "artists": [
+        { "name": "임서림", "role": "scripter", "id": "limseolim" },
+        { "name": "이영유", "role": "painter", "id": "leeyoungyu" },
+        { "name": "디앤씨웹툰비즈", "role": "publisher", "id": "dncwebtoonbiz" }
+      ],
+      "schedule": { "periods": ["TUE"], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 91,
+      "previousRank": 165,
+      "updatedAt": 1617023790741,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4866953452781568/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6552050783092736,
+      "alias": "turnoff_tv",
+      "title": "TV를 꺼드립니다",
+      "artists": [
+        { "name": "Lunar Phase", "role": "scripter", "id": "lunarphase" },
+        { "name": "sage", "role": "painter", "id": "sage" },
+        { "name": "디투컴퍼니", "role": "publisher", "id": "d2company" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 92,
+      "previousRank": 169,
+      "updatedAt": 1561352363621,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6552050783092736/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4904857069813760,
+      "alias": "ouran_host_club",
+      "title": "오란고교 호스트부",
+      "artists": [
+        { "name": "하토리 비스코", "role": "writer", "id": "biscohatori" },
+        { "name": "학산문화사", "role": "publisher", "id": "haksan" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 93,
+      "previousRank": 172,
+      "updatedAt": 1626069523290,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4904857069813760/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6245541874302976,
+      "alias": "spoonful_of_your_heart",
+      "title": "그대 마음 한 스푼 [연재]",
+      "artists": [
+        { "name": "JB", "role": "scripter", "id": "jb" },
+        { "name": "STEM", "role": "painter", "id": "stem" },
+        { "name": "서경", "role": "original", "id": "seokyeong" },
+        { "name": "이코믹스", "role": "publisher", "id": "ecomix" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 94,
+      "previousRank": 58,
+      "updatedAt": 1604654701144,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6245541874302976/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4732211905757184,
+      "alias": "runaway_wife",
+      "title": "대표님, 사모님이 도망가요 [연재]",
+      "artists": [
+        { "name": "Hongshu", "role": "painter", "id": "hongshu" },
+        { "name": "Anyouran", "role": "original", "id": "anyouran" },
+        { "name": "스토리숲", "role": "publisher", "id": "storySoop" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 21,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 95,
+      "previousRank": 273,
+      "updatedAt": 1625022275518,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4732211905757184/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4871738561527808,
+      "alias": "we_love",
+      "title": "우이 러브 -순수한 사랑 이야기-",
+      "artists": [
+        {
+          "name": "호시모리 유키모",
+          "role": "writer",
+          "id": "hoshimoriyukimo"
+        },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 96,
+      "previousRank": 279,
+      "updatedAt": 1565253612140,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4871738561527808/images/tall.jpg?width=130"
+    },
+    {
+      "id": 568,
+      "alias": "fujiyama",
+      "title": "후지야마는 사춘기",
+      "artists": [
+        { "name": "오지로 마코토", "role": "writer", "id": "ojiromakoto" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 1,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 97,
+      "previousRank": 327,
+      "updatedAt": 1512010804599,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/568/images/tall.jpg?width=130"
+    },
+    {
+      "id": 4589931149197312,
+      "alias": "black_maid",
+      "title": "사신 도련님과 검은 메이드 [연재]",
+      "artists": [
+        { "name": "이노우에 코하루", "role": "writer", "id": "koharuinoue" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 4,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 98,
+      "previousRank": 74,
+      "updatedAt": 1593584168441,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/4589931149197312/images/tall.jpg?width=130"
+    },
+    {
+      "id": 6035313625464832,
+      "alias": "mprobable_reason",
+      "title": "이율같지 않은 이유",
+      "artists": [
+        { "name": "RAY", "role": "scripter", "id": "ray" },
+        { "name": "치구리", "role": "painter", "id": "chiguri" },
+        {
+          "name": "서울미디어코믹스",
+          "role": "publisher",
+          "id": "seoulmediacomics"
+        }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 3,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 99,
+      "previousRank": 94,
+      "updatedAt": 1624864647474,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/6035313625464832/images/tall.jpg?width=130"
+    },
+    {
+      "id": 5697566023942144,
+      "alias": "cute_anyway",
+      "title": "어쨌든 귀여워",
+      "artists": [
+        { "name": "하타 켄지로", "role": "writer", "id": "kenjirohata" },
+        { "name": "DCW", "role": "publisher", "id": "dcw" }
+      ],
+      "schedule": { "periods": [], "anchor": 0 },
+      "genres": ["romance"],
+      "freedEpisodeSize": 2,
+      "contentsState": "completed",
+      "isPrint": true,
+      "currentRank": 100,
+      "previousRank": 11,
+      "updatedAt": 1591235227396,
+      "thumbnailSrc": "https://ccdn.lezhin.com/v2/comics/5697566023942144/images/tall.jpg?width=130"
+    }
+  ]
+}

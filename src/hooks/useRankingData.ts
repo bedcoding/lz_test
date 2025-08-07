@@ -1,0 +1,118 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import { ComicRankItem } from '@/types/ranking';
+import { fetchRomanceRanking, ApiError } from '@/services/api';
+
+interface UseRankingDataState {
+  items: ComicRankItem[];
+  isLoading: boolean;
+  isLoadingMore: boolean;
+  hasMore: boolean;
+  error: string | null;
+  currentPage: number;
+}
+
+export function useRankingData() {
+  const [state, setState] = useState<UseRankingDataState>({
+    items: [],
+    isLoading: true,
+    isLoadingMore: false,
+    hasMore: true,
+    error: null,
+    currentPage: 0
+  });
+
+  // 첫 페이지 로드
+  const loadInitialData = useCallback(async () => {
+    setState(prev => ({
+      ...prev,
+      isLoading: true,
+      error: null
+    }));
+
+    try {
+      const response = await fetchRomanceRanking(1);
+      
+      setState(prev => ({
+        ...prev,
+        items: response.data,
+        isLoading: false,
+        hasMore: response.hasNext,
+        currentPage: 1,
+        error: null
+      }));
+    } catch (error) {
+      const errorMessage = error instanceof ApiError 
+        ? error.message 
+        : '데이터를 불러오는데 실패했습니다.';
+      
+      setState(prev => ({
+        ...prev,
+        isLoading: false,
+        error: errorMessage
+      }));
+    }
+  }, []);
+
+  // 다음 페이지 로드
+  const loadMoreData = useCallback(async () => {
+    if (state.isLoadingMore || !state.hasMore || state.isLoading) {
+      return;
+    }
+
+    setState(prev => ({
+      ...prev,
+      isLoadingMore: true,
+      error: null
+    }));
+
+    try {
+      const nextPage = state.currentPage + 1;
+      const response = await fetchRomanceRanking(nextPage);
+      
+      setState(prev => ({
+        ...prev,
+        items: [...prev.items, ...response.data],
+        isLoadingMore: false,
+        hasMore: response.hasNext,
+        currentPage: nextPage,
+        error: null
+      }));
+    } catch (error) {
+      const errorMessage = error instanceof ApiError 
+        ? error.message 
+        : '추가 데이터를 불러오는데 실패했습니다.';
+      
+      setState(prev => ({
+        ...prev,
+        isLoadingMore: false,
+        error: errorMessage
+      }));
+    }
+  }, [state.currentPage, state.hasMore, state.isLoadingMore, state.isLoading]);
+
+  // 데이터 새로고침
+  const refreshData = useCallback(() => {
+    setState({
+      items: [],
+      isLoading: true,
+      isLoadingMore: false,
+      hasMore: true,
+      error: null,
+      currentPage: 0
+    });
+    loadInitialData();
+  }, [loadInitialData]);
+
+  // 컴포넌트 마운트 시 초기 데이터 로드
+  useEffect(() => {
+    loadInitialData();
+  }, [loadInitialData]);
+
+  return {
+    ...state,
+    loadMoreData,
+    refreshData
+  };
+}
