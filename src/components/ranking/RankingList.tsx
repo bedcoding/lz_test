@@ -136,12 +136,12 @@ export default function RankingList({
         <LoadMoreTrigger ref={loadMoreTriggerRef} />
       )}
       
-      {/* 추가 로딩 상태 - 스켈레톤 UI */}
+      {/* 추가 로딩 상태 - 최소 스켈레톤 UI */}
       {isLoadingMore && (
         <SkeletonContainer $isFirst>
           <LoadMoreTrigger ref={loadMoreTriggerRef} $hidden />
           {Array.from({ length: 5 }, (_, index) => (
-            <SkeletonItem key={`more-skeleton-${index}`} />
+            <SkeletonItem key={`more-skeleton-${index}`} mode="minimal" />
           ))}
         </SkeletonContainer>
       )}

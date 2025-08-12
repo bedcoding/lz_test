@@ -108,9 +108,21 @@ const SkeletonFreeEpisode = styled(SkeletonBase)`
 
 interface SkeletonItemProps {
   className?: string;
+  mode?: 'full' | 'minimal';
 }
 
-export default function SkeletonItem({ className }: SkeletonItemProps) {
+export default function SkeletonItem({ className, mode = 'full' }: SkeletonItemProps) {
+  if (mode === 'minimal') {
+    return (
+      <SkeletonContainer className={className}>
+        <SkeletonThumbnail />
+        <SkeletonContent>
+          {/* 빈 공간 - 데이터 로딩을 기다림 */}
+        </SkeletonContent>
+      </SkeletonContainer>
+    );
+  }
+
   return (
     <SkeletonContainer className={className}>
       <SkeletonThumbnail />
