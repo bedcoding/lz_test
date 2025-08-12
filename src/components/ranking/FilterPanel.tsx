@@ -89,11 +89,9 @@ const FilterButton = styled.button<{ $active: boolean }>`
 `;
 
 const GenreButton = styled.button<{ $active: boolean }>`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
-  border: 1px solid ${({ theme, $active }) => 
-    $active ? theme.colors.primary : theme.colors.border
-  };
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   background-color: ${({ theme, $active }) => 
     $active ? theme.colors.primary : theme.colors.background
   };
@@ -119,7 +117,7 @@ const GenreButton = styled.button<{ $active: boolean }>`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
+    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
     font-size: ${({ theme }) => theme.fonts.size.xs};
   }
 `;

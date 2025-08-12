@@ -53,7 +53,7 @@ export function useRankingData(genre: GenreType = 'romance') {
         error: errorMessage
       }));
     }
-  }, []);
+  }, [genre]);
 
   // 다음 페이지 로드
   const loadMoreData = useCallback(async () => {
@@ -90,7 +90,7 @@ export function useRankingData(genre: GenreType = 'romance') {
         error: errorMessage
       }));
     }
-  }, [state.currentPage, state.hasMore, state.isLoadingMore, state.isLoading]);
+  }, [genre, state.currentPage, state.hasMore, state.isLoadingMore, state.isLoading]);
 
   // 데이터 새로고침
   const refreshData = useCallback(() => {
