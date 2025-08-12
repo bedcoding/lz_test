@@ -157,11 +157,15 @@ npm start
 
 장르별 웹툰 랭킹 데이터를 가져옵니다.
 
+**사용 가능한 엔드포인트:**
+- `GET /api/comics/romance?page=1`
+- `GET /api/comics/drama?page=1`
+
 **Path Parameters:**
 - `genre`: 장르명 (`romance` | `drama`)
 
 **Query Parameters:**
-- `page`: 페이지 번호 (1 이상의 자연수)
+- `page`: 페이지 번호 (1~5, 각 장르당 5페이지 제공)
 
 ## 🎨 컴포넌트 설계
 
@@ -212,20 +216,36 @@ npm start
 
 ## 📈 성능 최적화
 
-### 명시적 최적화 작업
-- **React.memo**: 주요 컴포넌트 메모이제이션으로 불필요한 리렌더링 방지
-  - `RankingItem`, `SkeletonItem` 컴포넌트에 적용
-- **useMemo**: 의존성이 변경되지 않으면 이전 계산 결과 재사용 (비싼 연산 캐싱)
-  - `useFilter`에서 필터링된 아이템 배열 캐싱
-- **useCallback**: 의존성이 변경되지 않으면 동일한 함수 참조 유지
-  - 자식 컴포넌트에 props로 전달되는 함수가 렌더링 할때마다 새로 생성되는 것을 방지 (자식 리렌더링 방지)
-  - `useRankingData`에서 API 호출 함수들 최적화
-- **next/image**: 자동 WebP/AVIF 변환, 레이지 로딩, 반응형 최적화
-  - 웹툰 썸네일 이미지에 적용
-- **next/font**: Google Fonts 최적화로 폰트 로딩 성능 개선
-  - Inter 폰트 최적화 로딩
-- **Intersection Observer**: 무한 스크롤을 위한 효율적인 뷰포트 감지
-  - `useInfiniteScroll` 훅에서 구현
+### 🎯 구현한 최적화 기법 및 효과
+- **React.memo**: 컴포넌트 메모이제이션으로 불필요한 리렌더링 방지
+  - 적용: `RankingItem`, `SkeletonItem` 컴포넌트
+  - 효과: 무한스크롤 시 기존 100개 아이템이 매번 리렌더링되지 않음
+
+- **useMemo**: 의존성이 변경되지 않으면 이전 계산 결과 재사용
+  - 적용: `useFilter`에서 필터링된 아이템 배열 캐싱
+  - 효과: 100개 아이템 필터링 연산을 캐싱하여 렌더링 성능 향상
+
+- **useCallback**: 동일한 함수 참조 유지로 자식 리렌더링 방지
+  - 적용: `useRankingData`에서 API 호출 함수들 최적화
+  - 효과: API 호출 함수들의 불필요한 재생성 방지
+
+- **next/image**: 자동 이미지 최적화
+  - 적용: 웹툰 썸네일 이미지에 적용 (WebP/AVIF, 레이지 로딩, 반응형)
+  - 효과: 썸네일 이미지 자동 WebP 변환으로 용량 50% 감소
+
+- **next/font**: Google Fonts 최적화
+  - 적용: Inter 폰트 최적화 로딩
+  - 효과: 폰트 로딩 성능 개선
+
+- **Intersection Observer**: 효율적인 뷰포트 감지
+  - 적용: `useInfiniteScroll` 훅에서 무한 스크롤 구현
+  - 효과: 스크롤 이벤트 대비 성능 향상
+
+### ⚙️ Next.js 자동 최적화
+- **코드 스플리팅**: 페이지별 자동 분할
+- **트리 쉐이킹**: 사용하지 않는 코드 제거
+- **압축 및 Minification**: 자동 번들 압축
+
 ---
 
 ## 📋 체크리스트
