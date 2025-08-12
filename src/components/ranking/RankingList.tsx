@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { RefObject } from 'react';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingItem from './RankingItem';
@@ -103,7 +103,7 @@ interface RankingListProps {
   error: string | null;
   onLoadMore: () => void;
   onRetryLoadMore: () => void; // 무한스크롤 재시도 함수 추가
-  loadMoreTriggerRef: React.RefObject<HTMLDivElement>;
+  loadMoreTriggerRef: RefObject<HTMLDivElement>;
   className?: string;
 }
 

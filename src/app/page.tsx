@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import { Container, PageHeader, PageTitle, MainContent } from '@/components/layout/Container';
 import FilterPanel from '@/components/ranking/FilterPanel';
 import RankingList from '@/components/ranking/RankingList';

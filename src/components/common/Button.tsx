@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
 const baseButtonStyles = css`
@@ -108,11 +108,11 @@ const StyledButton = styled.button<{
   }}
 `;
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'filter';
   size?: 'sm' | 'md' | 'lg';
   active?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function Button({

@@ -163,38 +163,6 @@ npm start
 **Query Parameters:**
 - `page`: 페이지 번호 (1 이상의 자연수)
 
-**Response:**
-```typescript
-{
-  hasNext: boolean;
-  count: number;
-  data: ComicRankItem[];
-}
-```
-
-**ComicRankItem:**
-```typescript
-{
-  id: number;
-  alias: string;
-  title: string;
-  artists: Artist[];
-  schedule: {
-    periods: Period[];
-    anchor: number;
-  };
-  genres: string[];
-  badges: string;
-  freedEpisodeSize: number;
-  contentsState: "scheduled" | "completed";
-  currentRank: number;
-  previousRank: number;
-  updatedAt: number;
-  isPrint: boolean;
-  thumbnailSrc: string;
-}
-```
-
 ## 🎨 컴포넌트 설계
 
 ### 재사용성 고려사항
@@ -244,9 +212,64 @@ npm start
 
 ## 📈 성능 최적화
 
+### 명시적 최적화 작업
 - **React.memo**: 주요 컴포넌트 메모이제이션으로 불필요한 리렌더링 방지
-- **useMemo/useCallback**: 커스텀 훅에서 연산 결과 캐싱 및 함수 최적화
+  - `RankingItem`, `SkeletonItem` 컴포넌트에 적용
+- **useMemo**: 의존성이 변경되지 않으면 이전 계산 결과 재사용 (비싼 연산 캐싱)
+  - `useFilter`에서 필터링된 아이템 배열 캐싱
+- **useCallback**: 의존성이 변경되지 않으면 동일한 함수 참조 유지
+  - 자식 컴포넌트에 props로 전달되는 함수가 렌더링 할때마다 새로 생성되는 것을 방지 (자식 리렌더링 방지)
+  - `useRankingData`에서 API 호출 함수들 최적화
 - **next/image**: 자동 WebP/AVIF 변환, 레이지 로딩, 반응형 최적화
+  - 웹툰 썸네일 이미지에 적용
 - **next/font**: Google Fonts 최적화로 폰트 로딩 성능 개선
+  - Inter 폰트 최적화 로딩
 - **Intersection Observer**: 무한 스크롤을 위한 효율적인 뷰포트 감지
-- **번들 최적화**: 99.7KB 공유 청크로 최적화된 번들 크기
+  - `useInfiniteScroll` 훅에서 구현
+---
+
+## 📋 체크리스트
+
+### 🎯 기본 요구사항
+- ✅ **Next.js 활용** (React + TypeScript)
+- ✅ **styled-components** 사용
+- ✅ **반응형 웹** 구현 (Desktop, Mobile)
+- ✅ **모던 브라우저** 환경 고려 (Chrome, Safari, Firefox)
+- ✅ **로컬 개발 환경** 구성 및 README 작성
+- ✅ **컴포넌트 재사용성** 고려
+- ✅ **라이브러리 적용 이유** README에 작성
+
+### 🏗️ 구현 스펙
+- ✅ **다른 장르 재사용** 가능한 구조 설계 (로맨스 + 드라마)
+- ✅ **무한 스크롤** 기능 구현
+- ✅ **작품 썸네일** 노출 (`thumbnailSrc`)
+- ✅ **작품 타이틀** 노출 (`title`)
+- ✅ **작가명** 노출 (`artists` - writer, painter, scripter)
+- ✅ **랭킹 상태** 표현 (상승↗️, 하락↘️, 변동없음➖)
+- ✅ **무료 회차** 노출 (`freedEpisodeSize`)
+- ✅ **완결/연재 여부** 노출 (`contentsState`)
+- ✅ **연재 요일** 표시 (매주 X요일 연재)
+
+### 🔍 필터링 기능
+- ✅ **연재중 필터** 구현
+- ✅ **완결 필터** 구현
+- ✅ **무료회차 3개 이상** 필터 구현
+- ✅ **필터 중복 설정** 가능
+- ✅ **연재중/완결 상호 배타적** 처리
+
+### 🌐 API 구현
+- ✅ **GET /api/comics/romance** 구현 (page 1~5)
+- ✅ **GET /api/comics/drama** 구현 (추가 구현)
+- ✅ **Mock 데이터** 활용
+- ✅ **API Interface** 준수
+
+### 🚀 추가 구현사항
+- ✅ **다중 장르 지원** (로맨스 + 드라마)
+- ✅ **장르 필터** 추가 구현
+- ✅ **테스트 코드** 작성 (Vitest + RTL + MSW)
+- ✅ **SEO 최적화** (메타데이터, Open Graph)
+- ✅ **성능 최적화** (React.memo, next/image, useMemo/useCallback)
+- ✅ **접근성** 고려 (ARIA, 스크린 리더)
+- ✅ **에러 핸들링** 및 재시도 기능
+- ✅ **스켈레톤 UI** 로딩 상태
+- ✅ **배포** (Vercel)

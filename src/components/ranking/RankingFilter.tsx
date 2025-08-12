@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import styled from 'styled-components';
 import { FilterState, FilterType } from '@/types/ranking';
 import { getFilterLabel } from '@/utils/filter';

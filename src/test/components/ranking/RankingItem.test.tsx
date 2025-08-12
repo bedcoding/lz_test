@@ -1,12 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
+import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import RankingItem from '@/components/ranking/RankingItem';
 import { theme } from '@/styles/theme';
 import { ComicRankItem } from '@/types/ranking';
 
 // Test 컴포넌트 래퍼 (styled-components 테마 적용)
-const TestWrapper = ({ children }: { children: React.ReactNode }) => (
+const TestWrapper = ({ children }: { children: ReactNode }) => (
   <ThemeProvider theme={theme}>
     {children}
   </ThemeProvider>

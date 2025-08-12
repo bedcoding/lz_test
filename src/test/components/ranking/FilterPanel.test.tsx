@@ -1,12 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import FilterPanel from '@/components/ranking/FilterPanel';
 import { theme } from '@/styles/theme';
 import { FilterState, GenreState } from '@/types/ranking';
 
-const TestWrapper = ({ children }: { children: React.ReactNode }) => (
+const TestWrapper = ({ children }: { children: ReactNode }) => (
   <ThemeProvider theme={theme}>
     {children}
   </ThemeProvider>
