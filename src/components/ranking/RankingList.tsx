@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingItem from './RankingItem';
-import Loading from '@/components/common/Loading';
+import SkeletonItem from '@/components/common/SkeletonItem';
 
 const ListContainer = styled.div`
   display: flex;
@@ -65,9 +65,15 @@ export default function RankingList({
   loadMoreTriggerRef,
   className
 }: RankingListProps) {
-  // 초기 로딩 상태
+  // 초기 로딩 상태 - 스켈레톤 UI 표시
   if (isLoading && items.length === 0) {
-    return <Loading centered text="랭킹 데이터를 불러오는 중..." />;
+    return (
+      <ListContainer className={className}>
+        {Array.from({ length: 10 }, (_, index) => (
+          <SkeletonItem key={`skeleton-${index}`} />
+        ))}
+      </ListContainer>
+    );
   }
 
   // 에러 상태
@@ -120,21 +126,13 @@ export default function RankingList({
         <LoadMoreTrigger ref={loadMoreTriggerRef} />
       )}
       
-      {/* 추가 로딩 상태 */}
+      {/* 추가 로딩 상태 - 스켈레톤 UI */}
       {isLoadingMore && (
-        <Loading text="더 많은 작품을 불러오는 중..." />
-      )}
-      
-      {/* 더 이상 불러올 데이터가 없을 때 */}
-      {!hasMore && items.length > 0 && (
-        <div style={{ 
-          textAlign: 'center', 
-          padding: '32px 0',
-          color: '#7F8C8D',
-          fontSize: '14px'
-        }}>
-          모든 랭킹을 확인했습니다.
-        </div>
+        <>
+          {Array.from({ length: 5 }, (_, index) => (
+            <SkeletonItem key={`more-skeleton-${index}`} />
+          ))}
+        </>
       )}
       
       {/* 에러가 있지만 기존 데이터는 표시하는 경우 */}

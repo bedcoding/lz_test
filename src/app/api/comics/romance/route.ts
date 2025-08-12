@@ -32,9 +32,6 @@ export async function GET(request: NextRequest) {
     const fileContent = fs.readFileSync(dataPath, 'utf-8');
     const pageData: ComicRankApiSuccessResponse = JSON.parse(fileContent);
 
-    // 실제 API 호출을 시뮬레이션하기 위한 지연
-    await new Promise(resolve => setTimeout(resolve, 300));
-
     return NextResponse.json(pageData);
   } catch (error) {
     console.error('API Error:', error);
