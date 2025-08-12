@@ -16,6 +16,9 @@ export type RankingStatus = "up" | "down" | "same";
 // 필터 타입
 export type FilterType = "ongoing" | "completed" | "freeEpisodes";
 
+// 장르 타입
+export type GenreType = "romance" | "drama";
+
 export interface Artist {
   name: string; // 작가 필명
   role: ArtistRole; // 작가 롤
@@ -58,6 +61,11 @@ export interface FilterState {
   ongoing: boolean;
   completed: boolean;
   freeEpisodes: boolean;
+}
+
+// 장르 상태 인터페이스
+export interface GenreState {
+  selectedGenre: GenreType;
 }
 
 // 랭킹 상태 유틸리티 함수를 위한 타입

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { ComicRankItem } from '@/types/ranking';
-import { fetchRomanceRanking, ApiError } from '@/services/api';
+import { ComicRankItem, GenreType } from '@/types/ranking';
+import { fetchGenreRanking, ApiError } from '@/services/api';
 
 interface UseRankingDataState {
   items: ComicRankItem[];
@@ -13,7 +13,7 @@ interface UseRankingDataState {
   currentPage: number;
 }
 
-export function useRankingData() {
+export function useRankingData(genre: GenreType = 'romance') {
   const [state, setState] = useState<UseRankingDataState>({
     items: [],
     isLoading: true,
@@ -32,7 +32,7 @@ export function useRankingData() {
     }));
 
     try {
-      const response = await fetchRomanceRanking(1);
+      const response = await fetchGenreRanking(genre, 1);
       
       setState(prev => ({
         ...prev,
@@ -69,7 +69,7 @@ export function useRankingData() {
 
     try {
       const nextPage = state.currentPage + 1;
-      const response = await fetchRomanceRanking(nextPage);
+      const response = await fetchGenreRanking(genre, nextPage);
       
       setState(prev => ({
         ...prev,
@@ -105,10 +105,10 @@ export function useRankingData() {
     loadInitialData();
   }, [loadInitialData]);
 
-  // 컴포넌트 마운트 시 초기 데이터 로드
+  // 컴포넌트 마운트 시 또는 장르 변경 시 초기 데이터 로드
   useEffect(() => {
-    loadInitialData();
-  }, [loadInitialData]);
+    refreshData();
+  }, [genre, refreshData]);
 
   return {
     ...state,

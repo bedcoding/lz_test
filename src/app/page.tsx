@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { Container, PageHeader, PageTitle, MainContent } from '@/components/layout/Container';
-import RankingFilter from '@/components/ranking/RankingFilter';
+import FilterPanel from '@/components/ranking/FilterPanel';
 import RankingList from '@/components/ranking/RankingList';
 import { useRankingData } from '@/hooks/useRankingData';
 import { useFilter } from '@/hooks/useFilter';
+import { useGenre } from '@/hooks/useGenre';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 
 export default function Home() {
+  // 장르 상태 관리
+  const { genreState, handleGenreChange } = useGenre();
+
   // 랭킹 데이터 관리
   const {
     items,
@@ -17,7 +21,7 @@ export default function Home() {
     hasMore,
     error,
     loadMoreData
-  } = useRankingData();
+  } = useRankingData(genreState.selectedGenre);
 
   // 필터링 관리
   const {
@@ -36,14 +40,16 @@ export default function Home() {
   return (
     <Container>
       <PageHeader>
-        <PageTitle>로맨스 장르 랭킹</PageTitle>
+        <PageTitle>웹툰 랭킹</PageTitle>
       </PageHeader>
       
       <MainContent>
-        {/* 필터링 영역 */}
-        <RankingFilter
+        {/* 통합 필터 패널 */}
+        <FilterPanel
           filters={filters}
           onFilterChange={handleFilterToggle}
+          genreState={genreState}
+          onGenreChange={handleGenreChange}
         />
         
         {/* 랭킹 리스트 */}

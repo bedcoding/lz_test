@@ -19,8 +19,7 @@ export const Container = styled.div`
 export const PageHeader = styled.header`
   padding: ${({ theme }) => theme.spacing.xl} 0 ${({ theme }) => theme.spacing.lg};
   text-align: center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 `;
 
 export const PageTitle = styled.h1`

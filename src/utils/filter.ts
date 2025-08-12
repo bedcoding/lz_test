@@ -1,4 +1,4 @@
-import { ComicRankItem, FilterState } from '@/types/ranking';
+import { ComicRankItem, FilterState, GenreType, GenreState } from '@/types/ranking';
 
 /**
  * 필터 상태에 따라 작품 목록을 필터링
@@ -101,4 +101,28 @@ export function getFilterLabel(filterType: keyof FilterState): string {
   };
   
   return labels[filterType];
+}
+
+/**
+ * 장르 상태 초기화
+ * @returns GenreState
+ */
+export function getInitialGenreState(): GenreState {
+  return {
+    selectedGenre: 'romance'
+  };
+}
+
+/**
+ * 장르 레이블 반환
+ * @param genre GenreType
+ * @returns string
+ */
+export function getGenreLabel(genre: GenreType): string {
+  const labels = {
+    romance: '로맨스',
+    drama: '드라마'
+  };
+  
+  return labels[genre];
 }
