@@ -29,9 +29,19 @@ const EmptyDescription = styled.p`
   line-height: 1.6;
 `;
 
-const LoadMoreTrigger = styled.div`
-  height: 20px;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
+const LoadMoreTrigger = styled.div<{ $hidden?: boolean }>`
+  height: ${({ $hidden }) => $hidden ? '0' : '20px'};
+  margin: ${({ $hidden, theme }) => $hidden ? '0' : `${theme.spacing.lg} 0`};
+`;
+
+const SkeletonContainer = styled.div<{ $isFirst?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.md};
+  
+  ${({ $isFirst, theme }) => $isFirst && `
+    margin-top: -${theme.spacing.md};
+  `}
 `;
 
 const ErrorMessage = styled.div`
@@ -121,18 +131,19 @@ export default function RankingList({
         />
       ))}
       
-      {/* 무한 스크롤 트리거 */}
-      {hasMore && (
+      {/* 무한 스크롤 트리거 (로딩 중이 아닐 때만) */}
+      {hasMore && !isLoadingMore && (
         <LoadMoreTrigger ref={loadMoreTriggerRef} />
       )}
       
       {/* 추가 로딩 상태 - 스켈레톤 UI */}
       {isLoadingMore && (
-        <>
+        <SkeletonContainer $isFirst>
+          <LoadMoreTrigger ref={loadMoreTriggerRef} $hidden />
           {Array.from({ length: 5 }, (_, index) => (
             <SkeletonItem key={`more-skeleton-${index}`} />
           ))}
-        </>
+        </SkeletonContainer>
       )}
       
       {/* 에러가 있지만 기존 데이터는 표시하는 경우 */}
