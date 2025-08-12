@@ -200,10 +200,198 @@ npm start
 
 ## 🔍 테스트
 
-현재 프로젝트는 기능 구현에 집중되어 있으며, 추후 다음 테스트 도구 추가 예정:
-- **Jest**: 단위 테스트
-- **React Testing Library**: 컴포넌트 테스트
-- **Cypress**: E2E 테스트
+포괄적인 테스트 스택으로 코드 품질과 안정성을 보장합니다.
+
+### 🛠️ 테스트 스택
+
+#### **Vitest** - 차세대 테스트 프레임워크
+```typescript
+// vitest.config.ts에서 설정
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts']
+  }
+});
+```
+- **무엇인가?**: Vite 기반의 빠른 테스트 프레임워크
+- **왜 선택했나?**: Jest 대비 **5-10배 빠른 속도**, ES6 모듈 네이티브 지원
+- **어디서 사용?**: 모든 테스트 파일 (`.test.ts`, `.test.tsx`)
+- **실제 예시**: `src/test/utils/filter.test.ts` - 필터링 로직 단위 테스트
+
+#### **React Testing Library (RTL)** - 사용자 중심 컴포넌트 테스트
+```typescript
+// src/test/components/ranking/RankingItem.test.tsx
+import { render, screen } from '@testing-library/react';
+
+it('웹툰 제목, 작가명, 순위를 표시한다', () => {
+  render(<RankingItem item={mockItem} />);
+  expect(screen.getByText('테스트 웹툰')).toBeInTheDocument();
+});
+```
+- **무엇인가?**: "사용자가 보는 것"을 테스트하는 React 컴포넌트 테스트 라이브러리
+- **왜 선택했나?**: Enzyme 대비 **실제 사용자 경험**에 집중, **접근성 고려**
+- **어디서 사용?**: React 컴포넌트와 커스텀 훅 테스트
+- **실제 예시**: `src/test/components/ranking/FilterPanel.test.tsx` - 버튼 클릭, 키보드 네비게이션 테스트
+
+#### **MSW (Mock Service Worker)** - 네트워크 레벨 API 모킹
+```typescript
+// src/test/mocks/handlers.ts
+export const handlers = [
+  http.get('/api/comics/romance', async ({ request }) => {
+    const pageData = await loadPageData('romance', page);
+    return HttpResponse.json(pageData);
+  })
+];
+```
+- **무엇인가?**: 실제 네트워크 요청을 가로채서 가짜 응답을 제공하는 도구
+- **왜 선택했나?**: **실제 API와 동일한 방식**으로 테스트, **브라우저와 Node.js 모두 지원**
+- **어디서 사용?**: API 호출이 있는 모든 테스트 (컴포넌트, 훅, 서비스)
+- **실제 예시**: `src/test/services/api.test.ts` - API 요청/응답, 에러 처리 테스트
+
+#### **jsdom** - 브라우저 환경 시뮬레이션
+- **무엇인가?**: Node.js 환경에서 DOM API를 제공하는 라이브러리
+- **왜 필요한가?**: React 컴포넌트 렌더링, DOM 조작 테스트를 위해 필수
+- **어디서 사용?**: 모든 React 컴포넌트 테스트의 기반 환경
+
+### 📋 테스트 명령어
+
+```bash
+# 기본 테스트 실행 (watch 모드)
+npm test
+
+# 단일 실행 (CI/CD 환경)
+npm run test:run
+
+# 테스트 UI 실행 (브라우저에서 시각적 확인)
+npm run test:ui
+
+# 커버리지 리포트 생성
+npm run test:coverage
+
+# 변경사항 감지하여 테스트 실행
+npm run test:watch
+```
+
+### 🎯 테스트 구조
+
+```
+src/test/
+├── components/              # 컴포넌트 테스트 (RTL 사용)
+│   └── ranking/
+│       ├── RankingItem.test.tsx        # 웹툰 아이템 렌더링, 이미지 로딩 테스트
+│       └── FilterPanel.test.tsx        # 필터 버튼 클릭, 키보드 네비게이션 테스트
+├── hooks/                   # 커스텀 훅 테스트 (renderHook 사용)
+│   └── useFilter.test.ts               # 필터 상태 관리, 웹툰 필터링 로직 테스트
+├── services/                # API 서비스 테스트 (MSW 활용)
+│   └── api.test.ts                     # API 요청/응답, 에러 처리, 페이지네이션 테스트
+├── utils/                   # 유틸리티 함수 테스트 (순수 함수)
+│   ├── filter.test.ts                  # 필터링 로직, 라벨 생성 함수 테스트
+│   └── ranking.test.ts                 # 랭킹 상태 계산, 아이콘 생성 함수 테스트
+├── mocks/                   # MSW 모킹 설정
+│   ├── server.ts                       # MSW 서버 설정
+│   └── handlers.ts                     # API 엔드포인트 Mock 핸들러 (실제 JSON 데이터 활용)
+└── setup.ts                 # 테스트 환경 설정 (MSW, jsdom, 전역 Mock)
+```
+
+### 🔄 테스트 스택 선택 이유
+
+| 도구 | 대안 | 선택 이유 |
+|------|------|-----------|
+| **Vitest** | Jest | • **5-10배 빠른 속도**<br>• ES6 모듈 네이티브 지원<br>• TypeScript 지원 우수 |
+| **RTL** | Enzyme | • **사용자 중심 테스트**<br>• React 18+ 완벽 지원<br>• 접근성 고려 |
+| **MSW** | axios-mock-adapter | • **네트워크 레벨 모킹**<br>• 브라우저/Node.js 공통 사용<br>• 실제 API와 동일한 동작 |
+| **jsdom** | happy-dom | • **안정성 및 호환성**<br>• 풍부한 DOM API 지원<br>• React 생태계 표준 |
+
+### 🎪 테스트 커버리지
+
+주요 테스트 영역:
+- **유틸리티 함수**: 필터링, 랭킹 상태 계산 로직
+- **컴포넌트**: 렌더링, 사용자 인터랙션, 접근성
+- **커스텀 훅**: 상태 관리, 데이터 플로우
+- **API 서비스**: HTTP 요청/응답, 에러 처리
+
+### 🔧 테스트 설정
+
+#### vitest.config.ts
+```typescript
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    globals: true,
+    css: true,
+    coverage: {
+      reporter: ['text', 'json', 'html']
+    }
+  }
+});
+```
+
+#### MSW 모킹
+- 실제 네트워크 요청 차단
+- 일관된 테스트 데이터 제공
+- API 에러 상황 시뮬레이션
+
+### 📊 테스트 Best Practices
+
+#### 1. **사용자 관점 테스트** (RTL 활용)
+```typescript
+// ❌ 구현 세부사항 테스트
+expect(wrapper.state().isLoading).toBe(true);
+
+// ✅ 사용자가 보는 것 테스트  
+expect(screen.getByText('로딩 중...')).toBeInTheDocument();
+expect(screen.getByRole('button', { name: '로맨스' })).toBeInTheDocument();
+```
+
+#### 2. **격리된 테스트** (독립적 실행)
+```typescript
+// src/test/setup.ts에서 자동 정리
+afterEach(() => {
+  server.resetHandlers(); // MSW 핸들러 초기화
+  cleanup(); // React Testing Library 정리
+});
+```
+
+#### 3. **모킹 전략** (MSW로 네트워크 격리)
+```typescript
+// 실제 JSON 데이터 활용
+const pageData = await loadPageData('romance', page);
+return HttpResponse.json(pageData);
+
+// 에러 시나리오 테스트
+http.get('/api/comics/error', () => {
+  return HttpResponse.json({ error: 'Server Error' }, { status: 500 });
+});
+```
+
+#### 4. **접근성 테스트** (A11y 검증)
+```typescript
+// ARIA 속성 검증
+expect(screen.getByRole('group', { name: /작품 필터링 옵션/ })).toBeInTheDocument();
+
+// 키보드 네비게이션 테스트
+await user.tab(); // Tab 키 시뮬레이션
+await user.keyboard('{Enter}'); // Enter 키 시뮬레이션
+```
+
+#### 5. **에러 처리** (다양한 시나리오)
+```typescript
+// 네트워크 에러, 서버 에러, 404 등 모든 경우 테스트
+it('네트워크 에러 시 적절한 에러 메시지를 반환한다', async () => {
+  await expect(fetchGenreRanking('invalid', 1)).rejects.toThrow('Network error');
+});
+```
+
+### 🚀 CI/CD 통합
+
+```bash
+# 빌드 전 테스트 실행
+npm run test:run && npm run build
+```
 
 ## 📈 성능 최적화
 
@@ -211,10 +399,3 @@ npm start
 - **useMemo/useCallback**: 연산 결과 캐싱
 - **Intersection Observer**: 효율적인 스크롤 감지
 - **이미지 최적화**: next/image 활용 예정
-
-## 🚀 배포
-
-현재는 로컬 개발 환경에서만 실행 가능하며, 배포 시 다음 플랫폼 고려:
-- **Vercel**: Next.js 최적화 플랫폼
-- **Netlify**: 정적 사이트 호스팅
-- **AWS**: 엔터프라이즈 환경

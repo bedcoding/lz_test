@@ -13,7 +13,7 @@ export class ApiError extends Error {
 
 /**
  * 로맨스 장르 랭킹 데이터를 가져오는 함수
- * @param page 페이지 번호 (1-5)
+ * @param page 페이지 번호 (1 이상의 자연수)
  * @returns Promise<ComicRankApiSuccessResponse>
  */
 export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuccessResponse> {
@@ -51,8 +51,8 @@ export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuc
 
 /**
  * 장르별 랭킹 데이터를 가져오는 함수 (확장 가능한 구조)
- * @param genre 장르명
- * @param page 페이지 번호
+ * @param genre 장르명 (romance, drama 등)
+ * @param page 페이지 번호 (1 이상의 자연수)
  */
 export async function fetchGenreRanking(genre: string, page: number): Promise<ComicRankApiSuccessResponse> {
   try {

@@ -8,11 +8,11 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const page = searchParams.get('page') || '1';
     
-    // 페이지 번호 검증
+    // 페이지 번호 검증 (1 이상의 자연수)
     const pageNumber = parseInt(page);
-    if (isNaN(pageNumber) || pageNumber < 1 || pageNumber > 5) {
+    if (isNaN(pageNumber) || pageNumber < 1) {
       const errorResponse: ComicRankApiFailResponse = {
-        error: 'Invalid page number. Page must be between 1 and 5.'
+        error: 'Invalid page number. Page must be a positive integer.'
       };
       return NextResponse.json(errorResponse, { status: 400 });
     }
