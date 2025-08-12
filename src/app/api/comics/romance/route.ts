@@ -1,7 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ComicRankApiSuccessResponse, ComicRankApiFailResponse } from '@/types/ranking';
+import { ComicRankApiSuccessResponse, ComicRankApiFailResponse, ComicRankItem, RawComicItem } from '@/types/ranking';
 import fs from 'fs';
 import path from 'path';
+
+// JSON 데이터를 API Interface 명세에 맞게 변환
+function transformToApiInterface(item: RawComicItem): ComicRankItem {
+  return {
+    id: item.id,
+    alias: item.alias,
+    title: item.title,
+    artists: item.artists.map((artist) => ({
+      name: artist.name,
+      role: artist.role,
+      id: artist.id
+    })),
+    schedule: {
+      periods: item.schedule.periods
+    },
+    genres: item.genres,
+    freedEpisodeSize: item.freedEpisodeSize,
+    contentsState: item.contentsState,
+    currentRank: item.currentRank,
+    previousRank: item.previousRank,
+    updatedAt: item.updatedAt,
+    print: item.isPrint, // isPrint → print 변환
+    thumbnailSrc: item.thumbnailSrc
+  };
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -30,7 +55,14 @@ export async function GET(request: NextRequest) {
 
     // 파일 읽기
     const fileContent = fs.readFileSync(dataPath, 'utf-8');
-    const pageData: ComicRankApiSuccessResponse = JSON.parse(fileContent);
+    const rawData = JSON.parse(fileContent);
+
+    // JSON 데이터를 API Interface 명세에 맞게 변환
+    const pageData: ComicRankApiSuccessResponse = {
+      hasNext: rawData.hasNext,
+      count: rawData.count,
+      data: rawData.data.map(transformToApiInterface)
+    };
 
     return NextResponse.json(pageData);
   } catch (error) {

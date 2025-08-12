@@ -23,27 +23,45 @@ export interface Artist {
   name: string; // 작가 필명
   role: ArtistRole; // 작가 롤
   id: string; // 작가 id
-  email?: string | null; // 작가 이메일 (drama 작품에만 존재)
 }
 
-export interface ComicRankItem {
-  id: number; // 작품 id
-  alias: string; // 작품 형칭
-  title: string; // 작품 타이틀
-  artists: Artist[]; // 작가 정보
+// JSON 데이터의 작가 타입 (email 필드 포함)
+export interface RawArtist extends Artist {
+  email?: string | null; // JSON 데이터에만 존재
+}
+
+// 공통 웹툰 데이터 필드
+interface BaseComicFields {
+  id: number;
+  alias: string;
+  title: string;
+  genres: string[];
+  freedEpisodeSize: number;
+  contentsState: "scheduled" | "completed";
+  currentRank: number;
+  previousRank: number;
+  updatedAt: number;
+  thumbnailSrc: string;
+}
+
+// API Interface (기업 명세서)
+export interface ComicRankItem extends BaseComicFields {
+  artists: Artist[]; // API용 작가 정보
   schedule: {
     periods: Period[]; // 연재 요일
-    anchor: number; // 연재 시간 앵커
   };
-  genres: string[]; // 작품 장르
-  badges: string; // 작품 뱃지 정보
-  freedEpisodeSize: number; // 무료회차 수
-  contentsState: "scheduled" | "completed"; // 연재, 완결 값
-  currentRank: number; // 현재 랭킹
-  previousRank: number; // 이전 랭킹
-  updatedAt: number; // 업데이트 일자
-  isPrint: boolean; // 단행본 여부
-  thumbnailSrc: string; // 작품 썸네일 url
+  print: boolean; // API 표준 필드명
+}
+
+// JSON 데이터 타입 (변환 전)
+export interface RawComicItem extends BaseComicFields {
+  artists: RawArtist[]; // JSON용 작가 정보 (email 포함)
+  schedule: {
+    periods: Period[];
+    anchor?: number; // JSON에만 존재
+  };
+  badges?: string; // JSON에만 존재
+  isPrint: boolean; // JSON 필드명
 }
 
 export interface ComicRankApiSuccessResponse {

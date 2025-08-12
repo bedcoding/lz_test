@@ -1,5 +1,30 @@
 import { http, HttpResponse } from 'msw';
-import { ComicRankApiSuccessResponse } from '@/types/ranking';
+import { ComicRankApiSuccessResponse, ComicRankItem, RawComicItem } from '@/types/ranking';
+
+// JSON 데이터를 API Interface 명세에 맞게 변환
+function transformToApiInterface(item: RawComicItem): ComicRankItem {
+  return {
+    id: item.id,
+    alias: item.alias,
+    title: item.title,
+    artists: item.artists.map((artist) => ({
+      name: artist.name,
+      role: artist.role,
+      id: artist.id
+    })),
+    schedule: {
+      periods: item.schedule.periods
+    },
+    genres: item.genres,
+    freedEpisodeSize: item.freedEpisodeSize,
+    contentsState: item.contentsState,
+    currentRank: item.currentRank,
+    previousRank: item.previousRank,
+    updatedAt: item.updatedAt,
+    print: item.isPrint, // isPrint → print 변환
+    thumbnailSrc: item.thumbnailSrc
+  };
+}
 
 /**
  * 실제 JSON 파일에서 데이터를 로드하는 함수
@@ -8,8 +33,14 @@ import { ComicRankApiSuccessResponse } from '@/types/ranking';
 async function loadPageData(genre: 'romance' | 'drama', page: number): Promise<ComicRankApiSuccessResponse | null> {
   try {
     // 동적 import를 사용해서 실제 JSON 파일 로드
-    const data = await import(`../../../data/${genre}/page_${page}.json`);
-    return data.default as ComicRankApiSuccessResponse;
+    const rawData = await import(`../../../data/${genre}/page_${page}.json`);
+    
+    // JSON 데이터를 API Interface 명세에 맞게 변환
+    return {
+      hasNext: rawData.default.hasNext,
+      count: rawData.default.count,
+      data: rawData.default.data.map(transformToApiInterface)
+    };
   } catch {
     // 파일이 존재하지 않으면 null 반환
     return null;

@@ -20,12 +20,11 @@ describe('RankingItem 컴포넌트', () => {
     artists: [
       { name: '테스트 작가', role: 'writer', id: 'test-artist' }
     ],
-    schedule: { periods: ['MON', 'WED'], anchor: 0 },
+    schedule: { periods: ['MON', 'WED'] },
     genres: ['romance'],
-    badges: '',
     freedEpisodeSize: 5,
     contentsState: 'scheduled',
-    isPrint: false,
+    print: false,
     currentRank: 1,
     previousRank: 3,
     updatedAt: 1640995200000,
@@ -115,7 +114,7 @@ describe('RankingItem 컴포넌트', () => {
     const completedItem: ComicRankItem = {
       ...mockItem,
       contentsState: 'completed',
-      schedule: { periods: [], anchor: 0 }
+      schedule: { periods: [] }
     };
 
     render(
@@ -165,10 +164,10 @@ describe('RankingItem 컴포넌트', () => {
   });
 
   it('이미지 로딩 에러 시 회색 박스만 표시된다', async () => {
-    // 에러를 발생시키는 이미지 URL
+    // 에러를 발생시키는 이미지 URL (유효한 형식이지만 실제로는 존재하지 않음)
     const errorItem: ComicRankItem = {
       ...mockItem,
-      thumbnailSrc: 'invalid-url'
+      thumbnailSrc: 'https://example.com/non-existent-image.jpg'
     };
 
     render(
