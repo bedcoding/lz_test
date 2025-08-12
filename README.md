@@ -247,4 +247,4 @@ npm start
 - **React.memo**: 불필요한 리렌더링 방지
 - **useMemo/useCallback**: 연산 결과 캐싱
 - **Intersection Observer**: 효율적인 스크롤 감지
-- **이미지 최적화**: next/image 활용 예정
+- **이미지 최적화**: next/image 적용

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingStatus from './RankingStatus';
@@ -46,14 +47,8 @@ const Thumbnail = styled.div`
   }
 `;
 
-const ThumbnailImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+const ThumbnailImage = styled(Image)`
   border-radius: ${({ theme }) => theme.borderRadius.md};
-  position: absolute;
-  top: 0;
-  left: 0;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   
@@ -197,9 +192,14 @@ export default function RankingItem({ item, className }: RankingItemProps) {
           <ThumbnailImage 
             src={thumbnailSrc} 
             alt={`${title} 썸네일`}
+            fill
+            sizes="(max-width: 768px) 60px, 80px"
+            style={{ objectFit: 'cover' }}
             className={getImageClassName()}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R/i+C4Q1bdkESd6zSeUTVQ2cUQQhgkO9Fv7cfdFn7J4X0c3RP8A8fhcFGPf8WGJZ7k5NmnMzNl9Q/xLjyLnfgdfEcBRyedbYv8AjyHOe7l+6Ox8oNAwwCN8ggtPalyDo1sRUUF/pWp4YFi4lQeT9tG7nj9VTd3HYKV86P8ATYHcTcYQDrn6Pvo+yVmPrlZrQFa5JQJJ6SdCCMz7j1xgKqRr8yF+fV9AYnQKRFQeJ8fOCtMEzm8KcwfZaBvg=="
           />
         )}
       </Thumbnail>
