@@ -111,7 +111,8 @@ interface SkeletonItemProps {
   mode?: 'full' | 'minimal';
 }
 
-export default function SkeletonItem({ className, mode = 'full' }: SkeletonItemProps) {
+// 로딩 상태 변경 시 불필요한 리렌더링 방지를 위한 memo 추가
+const SkeletonItem = React.memo(function SkeletonItem({ className, mode = 'full' }: SkeletonItemProps) {
   if (mode === 'minimal') {
     return (
       <SkeletonContainer className={className}>
@@ -142,4 +143,6 @@ export default function SkeletonItem({ className, mode = 'full' }: SkeletonItemP
       </SkeletonContent>
     </SkeletonContainer>
   );
-}
+});
+
+export default SkeletonItem;

@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "@/components/layout/StyledComponentsRegistry";
 import ThemeProvider from "@/components/layout/ThemeProvider";
 
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter"
+});
+
 export const metadata: Metadata = {
-  title: "로맨스 장르 랭킹",
-  description: "인기 로맨스 웹툰 랭킹을 확인하세요",
-  keywords: "웹툰, 로맨스, 랭킹",
+  title: "웹툰 랭킹",
+  description: "인기 웹툰 랭킹을 확인하세요",
+  keywords: "웹툰, 로맨스, 드라마, 랭킹",
   authors: [{ name: "Lezhin Entertainment" }],
-  viewport: "width=device-width, initial-scale=1.0",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
@@ -17,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
+      <body className={inter.variable}>
         <StyledComponentsRegistry>
           <ThemeProvider>
             {children}

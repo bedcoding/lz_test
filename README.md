@@ -244,7 +244,9 @@ npm start
 
 ## 📈 성능 최적화
 
-- **React.memo**: 불필요한 리렌더링 방지
-- **useMemo/useCallback**: 연산 결과 캐싱
-- **Intersection Observer**: 효율적인 스크롤 감지
-- **이미지 최적화**: next/image 적용
+- **React.memo**: 주요 컴포넌트 메모이제이션으로 불필요한 리렌더링 방지
+- **useMemo/useCallback**: 커스텀 훅에서 연산 결과 캐싱 및 함수 최적화
+- **next/image**: 자동 WebP/AVIF 변환, 레이지 로딩, 반응형 최적화
+- **next/font**: Google Fonts 최적화로 폰트 로딩 성능 개선
+- **Intersection Observer**: 무한 스크롤을 위한 효율적인 뷰포트 감지
+- **번들 최적화**: 99.7KB 공유 청크로 최적화된 번들 크기

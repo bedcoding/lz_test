@@ -152,7 +152,8 @@ interface RankingItemProps {
   className?: string;
 }
 
-export default function RankingItem({ item, className }: RankingItemProps) {
+// 무한스크롤 시 기존 아이템들이 리렌더링되지 않도록 memo 추가
+const RankingItem = React.memo(function RankingItem({ item, className }: RankingItemProps) {
   const [imageLoaded, setImageLoaded] = React.useState(false);
   const [imageError, setImageError] = React.useState(false);
   
@@ -237,4 +238,6 @@ export default function RankingItem({ item, className }: RankingItemProps) {
       </ContentArea>
     </ItemContainer>
   );
-}
+});
+
+export default RankingItem;
