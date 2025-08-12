@@ -40,30 +40,6 @@ const Thumbnail = styled.div`
   overflow: hidden;
   position: relative;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    background: linear-gradient(
-      135deg,
-      transparent 40%,
-      ${({ theme }) => theme.colors.text.light} 40%,
-      ${({ theme }) => theme.colors.text.light} 60%,
-      transparent 60%
-    ),
-    linear-gradient(
-      45deg,
-      transparent 40%,
-      ${({ theme }) => theme.colors.text.light} 40%,
-      ${({ theme }) => theme.colors.text.light} 60%,
-      transparent 60%
-    );
-  }
-  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 60px;
     height: 75px;
@@ -75,6 +51,19 @@ const ThumbnailImage = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: ${({ theme }) => theme.borderRadius.md};
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  
+  &.loaded {
+    opacity: 1;
+  }
+  
+  &.error {
+    display: none;
+  }
 `;
 
 const ContentArea = styled.div`
@@ -169,6 +158,9 @@ interface RankingItemProps {
 }
 
 export default function RankingItem({ item, className }: RankingItemProps) {
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+  const [imageError, setImageError] = React.useState(false);
+  
   const {
     currentRank,
     previousRank,
@@ -191,19 +183,25 @@ export default function RankingItem({ item, className }: RankingItemProps) {
   const stateText = getContentsStateText(contentsState);
   const freeEpisodeText = getFreeEpisodeText(freedEpisodeSize);
 
+  // 이미지 클래스 결정
+  const getImageClassName = () => {
+    if (imageError) return 'error';
+    if (imageLoaded) return 'loaded';
+    return '';
+  };
+
   return (
     <ItemContainer className={className}>
       <Thumbnail>
-        {thumbnailSrc ? (
+        {thumbnailSrc && (
           <ThumbnailImage 
             src={thumbnailSrc} 
             alt={`${title} 썸네일`}
-            onError={(e) => {
-              // 이미지 로드 실패 시 기본 placeholder 표시
-              e.currentTarget.style.display = 'none';
-            }}
+            className={getImageClassName()}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
           />
-        ) : null}
+        )}
       </Thumbnail>
       
       <ContentArea>
