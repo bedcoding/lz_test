@@ -20,7 +20,8 @@ export default function Home() {
     isLoadingMore,
     hasMore,
     error,
-    loadMoreData
+    loadMoreData,
+    retryLoadMore
   } = useRankingData(genreState.selectedGenre);
 
   // 필터링 관리
@@ -61,6 +62,7 @@ export default function Home() {
             hasMore={hasMore}
             error={error}
             onLoadMore={loadMoreData}
+            onRetryLoadMore={retryLoadMore}
             loadMoreTriggerRef={loadMoreTriggerRef}
           />
         </div>

@@ -87,6 +87,7 @@ export function useRankingData(genre: GenreType = 'romance') {
       setState(prev => ({
         ...prev,
         isLoadingMore: false,
+        hasMore: false, // 🔥 에러 발생 시 무한스크롤 중단
         error: errorMessage
       }));
     }
@@ -110,9 +111,20 @@ export function useRankingData(genre: GenreType = 'romance') {
     refreshData();
   }, [genre, refreshData]);
 
+  // 무한스크롤 재시도 함수
+  const retryLoadMore = useCallback(() => {
+    setState(prev => ({
+      ...prev,
+      hasMore: true, // 재시도를 위해 hasMore 복구
+      error: null
+    }));
+    loadMoreData();
+  }, [loadMoreData]);
+
   return {
     ...state,
     loadMoreData,
-    refreshData
+    refreshData,
+    retryLoadMore
   };
 }

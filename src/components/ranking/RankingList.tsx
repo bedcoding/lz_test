@@ -44,6 +44,47 @@ const SkeletonContainer = styled.div<{ $isFirst?: boolean }>`
   `}
 `;
 
+const InfiniteScrollError = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.md};
+  padding: ${({ theme }) => theme.spacing.xl};
+  margin-top: ${({ theme }) => theme.spacing.lg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.borderRadius.md};
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
+const ErrorText = styled.p`
+  color: ${({ theme }) => theme.colors.text.secondary};
+  text-align: center;
+  margin: 0;
+  font-size: ${({ theme }) => theme.fonts.size.sm};
+`;
+
+const RetryButton = styled.button`
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
+  background-color: transparent;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ theme }) => theme.fonts.size.sm};
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: white;
+  }
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+  }
+`;
+
 const ErrorMessage = styled.div`
   text-align: center;
   padding: ${({ theme }) => theme.spacing.xl};
@@ -61,6 +102,7 @@ interface RankingListProps {
   hasMore: boolean;
   error: string | null;
   onLoadMore: () => void;
+  onRetryLoadMore: () => void; // 무한스크롤 재시도 함수 추가
   loadMoreTriggerRef: React.RefObject<HTMLDivElement>;
   className?: string;
 }
@@ -72,6 +114,7 @@ export default function RankingList({
   hasMore,
   error,
   onLoadMore,
+  onRetryLoadMore,
   loadMoreTriggerRef,
   className
 }: RankingListProps) {
@@ -114,7 +157,7 @@ export default function RankingList({
   if (items.length === 0) {
     return (
       <EmptyState>
-        <EmptyTitle>검색 결과가 없습니다</EmptyTitle>
+        <EmptyTitle>결과가 없습니다</EmptyTitle>
         <EmptyDescription>
           다른 필터 조건을 선택해보세요.
         </EmptyDescription>
@@ -145,27 +188,17 @@ export default function RankingList({
           ))}
         </SkeletonContainer>
       )}
-      
-      {/* 에러가 있지만 기존 데이터는 표시하는 경우 */}
-      {error && items.length > 0 && (
-        <ErrorMessage>
-          <p>추가 데이터를 불러오는데 실패했습니다: {error}</p>
-          <button 
-            onClick={onLoadMore}
-            style={{ 
-              marginTop: '8px', 
-              padding: '8px 16px', 
-              border: 'none', 
-              borderRadius: '4px',
-              backgroundColor: '#FF6B6B',
-              color: 'white',
-              cursor: 'pointer'
-            }}
-          >
+
+      {/* 무한스크롤 중 에러 발생 시 재시도 UI */}
+      {items.length > 0 && error && !hasMore && !isLoadingMore && (
+        <InfiniteScrollError>
+          <ErrorText>{error}</ErrorText>
+          <RetryButton onClick={onRetryLoadMore}>
             다시 시도
-          </button>
-        </ErrorMessage>
+          </RetryButton>
+        </InfiniteScrollError>
       )}
+
     </ListContainer>
   );
 }
