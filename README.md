@@ -1,10 +1,11 @@
-# 로맨스 장르 랭킹
+# 웹툰 랭킹 조회
 
-로맨스 장르 웹툰 랭킹을 확인할 수 있는 웹 애플리케이션입니다.
+> **Live Demo**: [https://lz-test-one.vercel.app/](https://lz-test-one.vercel.app/)
+
 
 ## 🚀 주요 기능
 
-- **랭킹 리스트**: 로맨스 장르 웹툰의 실시간 랭킹 확인
+- **랭킹 리스트**: 로맨스·드라마 장르 웹툰의 실시간 랭킹 확인
 - **무한 스크롤**: 스크롤을 통한 자동 페이지 로딩
 - **필터링**: 연재중/완결/무료회차 조건으로 작품 필터링
 - **반응형 디자인**: Desktop, Tablet, Mobile 환경 지원
@@ -13,16 +14,48 @@
 ## 🛠️ 기술 스택
 
 ### Core Framework
-- **Next.js 14**: React 기반 풀스택 프레임워크
-- **React 18**: 컴포넌트 기반 UI 라이브러리
-- **TypeScript**: 정적 타입 검사
+- **Next.js 15.4.6**: React 기반 풀스택 프레임워크
+  - *선택 이유*: SSR/SSG 지원으로 SEO 최적화, API Routes로 백엔드 통합, 파일 기반 라우팅의 직관성
+- **React 19.1.0**: 컴포넌트 기반 UI 라이브러리
+  - *선택 이유*: 컴포넌트 재사용성, 가상 DOM을 통한 효율적 렌더링, 풍부한 생태계
+- **TypeScript 5**: 정적 타입 검사
+  - *선택 이유*: 런타임 에러 사전 방지, 개발 경험 향상, 코드 품질 및 유지보수성 증대
 
 ### Styling
-- **styled-components**: CSS-in-JS 스타일링 라이브러리
+- **styled-components 6.1.19**: CSS-in-JS 스타일링 라이브러리
+  - *선택 이유*: 컴포넌트와 스타일의 강한 결합, 동적 스타일링, 테마 시스템 구축 용이, SSR 호환
 
 ### 개발 도구
-- **ESLint**: 코드 품질 검사
-- **Prettier**: 코드 포맷팅 (package.json 설정)
+- **ESLint 9**: 코드 품질 검사
+  - *선택 이유*: 코딩 표준 강제, 잠재적 버그 사전 발견, Next.js 최적화 규칙 포함
+- **Vite**: 빌드 도구 (Vitest와 통합)
+  - *선택 이유*: 빠른 개발 서버, ES 모듈 기반 최적화, 테스트 환경과 일관성
+
+## 🔍 테스트
+
+포괄적인 테스트 스택으로 코드 품질과 안정성을 보장합니다.
+
+### 테스트 스택
+| 도구 | 역할 | 선택 이유 |
+|------|------|-----------|
+| **Vitest 3.2.4** | 테스트 프레임워크 | Jest 대비 **5-10배 빠른 속도**, TypeScript 네이티브 지원 |
+| **React Testing Library** | 컴포넌트 테스트 | **사용자 중심 테스트**, 실제 사용자 경험에 집중 |
+| **MSW 2.10.4** | API 모킹 | **네트워크 레벨 모킹**, 실제 API와 동일한 동작 |
+| **jsdom 26.1.0** | 브라우저 환경 | React 컴포넌트 렌더링을 위한 DOM API 제공 |
+
+### 테스트 명령어
+```bash
+npm test              # 기본 테스트 실행 (watch 모드)
+npm run test:run      # 단일 실행 (CI/CD 환경)
+npm run test:coverage # 커버리지 리포트 생성
+npm run test:ui       # 브라우저에서 시각적 테스트 UI
+```
+
+### 주요 테스트 영역
+- **컴포넌트**: 렌더링, 사용자 인터랙션, 접근성 검증
+- **커스텀 훅**: 상태 관리, 필터링 로직 테스트
+- **API 서비스**: HTTP 요청/응답, 에러 처리 검증
+- **유틸리티**: 순수 함수 로직 단위 테스트
 
 ## 📁 프로젝트 구조
 
@@ -30,26 +63,30 @@
 lezhin-ranking/
 ├── src/
 │   ├── app/                    # Next.js App Router
-│   │   ├── api/comics/romance/ # API 라우트
+│   │   ├── api/comics/         # API 라우트 (romance, drama)
 │   │   ├── layout.tsx          # 루트 레이아웃
 │   │   └── page.tsx           # 메인 페이지
 │   ├── components/
 │   │   ├── common/            # 공통 컴포넌트
 │   │   │   ├── Button.tsx
-│   │   │   └── Loading.tsx
+│   │   │   ├── Loading.tsx
+│   │   │   └── SkeletonItem.tsx
 │   │   ├── ranking/           # 랭킹 관련 컴포넌트
+│   │   │   ├── FilterPanel.tsx
+│   │   │   ├── GenreFilter.tsx
+│   │   │   ├── RankingFilter.tsx
 │   │   │   ├── RankingItem.tsx
 │   │   │   ├── RankingList.tsx
-│   │   │   ├── RankingFilter.tsx
 │   │   │   └── RankingStatus.tsx
 │   │   └── layout/            # 레이아웃 컴포넌트
 │   │       ├── Container.tsx
 │   │       ├── ThemeProvider.tsx
 │   │       └── StyledComponentsRegistry.tsx
 │   ├── hooks/                 # Custom Hooks
+│   │   ├── useFilter.ts
+│   │   ├── useGenre.ts
 │   │   ├── useInfiniteScroll.ts
-│   │   ├── useRankingData.ts
-│   │   └── useFilter.ts
+│   │   └── useRankingData.ts
 │   ├── services/              # API 서비스
 │   │   └── api.ts
 │   ├── types/                 # TypeScript 타입 정의
@@ -58,11 +95,33 @@ lezhin-ranking/
 │   ├── styles/                # 스타일 관련
 │   │   ├── GlobalStyle.ts
 │   │   └── theme.ts
+│   ├── test/                  # 테스트 파일
+│   │   ├── components/        # 컴포넌트 테스트
+│   │   │   └── ranking/
+│   │   │       ├── FilterPanel.test.tsx
+│   │   │       └── RankingItem.test.tsx
+│   │   ├── hooks/             # 커스텀 훅 테스트
+│   │   │   └── useFilter.test.ts
+│   │   ├── mocks/             # MSW 모킹 설정
+│   │   │   ├── handlers.ts
+│   │   │   └── server.ts
+│   │   ├── services/          # API 서비스 테스트
+│   │   │   └── api.test.ts
+│   │   ├── utils/             # 유틸리티 함수 테스트
+│   │   │   ├── filter.test.ts
+│   │   │   └── ranking.test.ts
+│   │   └── setup.ts           # 테스트 환경 설정
 │   └── utils/                 # 유틸리티 함수
-│       ├── ranking.ts
-│       └── filter.ts
-├── data/mock/                 # Mock 데이터
-│   └── ranking.json
+│       ├── filter.ts
+│       └── ranking.ts
+├── data/                      # Mock 데이터
+│   ├── romance/               # 로맨스 장르 데이터
+│   │   ├── page_1.json
+│   │   └── ...
+│   └── drama/                 # 드라마 장르 데이터
+│       ├── page_1.json
+│       └── ...
+├── vitest.config.ts           # Vitest 설정
 └── public/                    # 정적 파일
 ```
 
@@ -94,12 +153,15 @@ npm start
 
 ## 📋 API 명세
 
-### GET /api/comics/romance
+### GET /api/comics/{genre}
 
-로맨스 장르 랭킹 데이터를 가져옵니다.
+장르별 웹툰 랭킹 데이터를 가져옵니다.
+
+**Path Parameters:**
+- `genre`: 장르명 (`romance` | `drama`)
 
 **Query Parameters:**
-- `page`: 페이지 번호 (1-5)
+- `page`: 페이지 번호 (1 이상의 자연수)
 
 **Response:**
 ```typescript
@@ -114,15 +176,22 @@ npm start
 ```typescript
 {
   id: number;
+  alias: string;
   title: string;
   artists: Artist[];
-  currentRank: number;
-  previousRank: number;
+  schedule: {
+    periods: Period[];
+    anchor: number;
+  };
+  genres: string[];
+  badges: string;
   freedEpisodeSize: number;
   contentsState: "scheduled" | "completed";
-  schedule: { periods: Period[] };
+  currentRank: number;
+  previousRank: number;
+  updatedAt: number;
+  isPrint: boolean;
   thumbnailSrc: string;
-  // ... 기타 필드
 }
 ```
 
@@ -172,226 +241,6 @@ npm start
 - **하락(▼)**: 이전 순위보다 하락
 - **변동없음(-)**: 순위 변화 없음
 - 순위 변동폭 숫자 표시
-
-## 🔧 기술 선택 이유
-
-### Next.js
-- **SSR/SSG 지원**: SEO 최적화 및 초기 로딩 성능
-- **API Routes**: 백엔드 API를 같은 프로젝트에서 관리
-- **파일 기반 라우팅**: 직관적인 페이지 구조
-- **최적화**: 이미지, 폰트, 번들 자동 최적화
-
-### styled-components
-- **CSS-in-JS**: 컴포넌트와 스타일의 강한 결합
-- **테마 시스템**: 일관된 디자인 시스템 구축
-- **동적 스타일링**: Props에 따른 조건부 스타일
-- **SSR 지원**: 서버사이드 렌더링 호환
-
-### TypeScript
-- **타입 안정성**: 런타임 에러 사전 방지
-- **개발 경험**: IntelliSense 및 자동완성
-- **코드 품질**: 명시적 인터페이스 정의
-- **유지보수성**: 리팩토링 안정성
-
-### Custom Hooks
-- **관심사 분리**: 비즈니스 로직과 UI 분리
-- **재사용성**: 다른 컴포넌트에서 재사용 가능
-- **테스트 용이성**: 로직 단위 테스트 가능
-
-## 🔍 테스트
-
-포괄적인 테스트 스택으로 코드 품질과 안정성을 보장합니다.
-
-### 🛠️ 테스트 스택
-
-#### **Vitest** - 차세대 테스트 프레임워크
-```typescript
-// vitest.config.ts에서 설정
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts']
-  }
-});
-```
-- **무엇인가?**: Vite 기반의 빠른 테스트 프레임워크
-- **왜 선택했나?**: Jest 대비 **5-10배 빠른 속도**, ES6 모듈 네이티브 지원
-- **어디서 사용?**: 모든 테스트 파일 (`.test.ts`, `.test.tsx`)
-- **실제 예시**: `src/test/utils/filter.test.ts` - 필터링 로직 단위 테스트
-
-#### **React Testing Library (RTL)** - 사용자 중심 컴포넌트 테스트
-```typescript
-// src/test/components/ranking/RankingItem.test.tsx
-import { render, screen } from '@testing-library/react';
-
-it('웹툰 제목, 작가명, 순위를 표시한다', () => {
-  render(<RankingItem item={mockItem} />);
-  expect(screen.getByText('테스트 웹툰')).toBeInTheDocument();
-});
-```
-- **무엇인가?**: "사용자가 보는 것"을 테스트하는 React 컴포넌트 테스트 라이브러리
-- **왜 선택했나?**: Enzyme 대비 **실제 사용자 경험**에 집중, **접근성 고려**
-- **어디서 사용?**: React 컴포넌트와 커스텀 훅 테스트
-- **실제 예시**: `src/test/components/ranking/FilterPanel.test.tsx` - 버튼 클릭, 키보드 네비게이션 테스트
-
-#### **MSW (Mock Service Worker)** - 네트워크 레벨 API 모킹
-```typescript
-// src/test/mocks/handlers.ts
-export const handlers = [
-  http.get('/api/comics/romance', async ({ request }) => {
-    const pageData = await loadPageData('romance', page);
-    return HttpResponse.json(pageData);
-  })
-];
-```
-- **무엇인가?**: 실제 네트워크 요청을 가로채서 가짜 응답을 제공하는 도구
-- **왜 선택했나?**: **실제 API와 동일한 방식**으로 테스트, **브라우저와 Node.js 모두 지원**
-- **어디서 사용?**: API 호출이 있는 모든 테스트 (컴포넌트, 훅, 서비스)
-- **실제 예시**: `src/test/services/api.test.ts` - API 요청/응답, 에러 처리 테스트
-
-#### **jsdom** - 브라우저 환경 시뮬레이션
-- **무엇인가?**: Node.js 환경에서 DOM API를 제공하는 라이브러리
-- **왜 필요한가?**: React 컴포넌트 렌더링, DOM 조작 테스트를 위해 필수
-- **어디서 사용?**: 모든 React 컴포넌트 테스트의 기반 환경
-
-### 📋 테스트 명령어
-
-```bash
-# 기본 테스트 실행 (watch 모드)
-npm test
-
-# 단일 실행 (CI/CD 환경)
-npm run test:run
-
-# 테스트 UI 실행 (브라우저에서 시각적 확인)
-npm run test:ui
-
-# 커버리지 리포트 생성
-npm run test:coverage
-
-# 변경사항 감지하여 테스트 실행
-npm run test:watch
-```
-
-### 🎯 테스트 구조
-
-```
-src/test/
-├── components/              # 컴포넌트 테스트 (RTL 사용)
-│   └── ranking/
-│       ├── RankingItem.test.tsx        # 웹툰 아이템 렌더링, 이미지 로딩 테스트
-│       └── FilterPanel.test.tsx        # 필터 버튼 클릭, 키보드 네비게이션 테스트
-├── hooks/                   # 커스텀 훅 테스트 (renderHook 사용)
-│   └── useFilter.test.ts               # 필터 상태 관리, 웹툰 필터링 로직 테스트
-├── services/                # API 서비스 테스트 (MSW 활용)
-│   └── api.test.ts                     # API 요청/응답, 에러 처리, 페이지네이션 테스트
-├── utils/                   # 유틸리티 함수 테스트 (순수 함수)
-│   ├── filter.test.ts                  # 필터링 로직, 라벨 생성 함수 테스트
-│   └── ranking.test.ts                 # 랭킹 상태 계산, 아이콘 생성 함수 테스트
-├── mocks/                   # MSW 모킹 설정
-│   ├── server.ts                       # MSW 서버 설정
-│   └── handlers.ts                     # API 엔드포인트 Mock 핸들러 (실제 JSON 데이터 활용)
-└── setup.ts                 # 테스트 환경 설정 (MSW, jsdom, 전역 Mock)
-```
-
-### 🔄 테스트 스택 선택 이유
-
-| 도구 | 대안 | 선택 이유 |
-|------|------|-----------|
-| **Vitest** | Jest | • **5-10배 빠른 속도**<br>• ES6 모듈 네이티브 지원<br>• TypeScript 지원 우수 |
-| **RTL** | Enzyme | • **사용자 중심 테스트**<br>• React 18+ 완벽 지원<br>• 접근성 고려 |
-| **MSW** | axios-mock-adapter | • **네트워크 레벨 모킹**<br>• 브라우저/Node.js 공통 사용<br>• 실제 API와 동일한 동작 |
-| **jsdom** | happy-dom | • **안정성 및 호환성**<br>• 풍부한 DOM API 지원<br>• React 생태계 표준 |
-
-### 🎪 테스트 커버리지
-
-주요 테스트 영역:
-- **유틸리티 함수**: 필터링, 랭킹 상태 계산 로직
-- **컴포넌트**: 렌더링, 사용자 인터랙션, 접근성
-- **커스텀 훅**: 상태 관리, 데이터 플로우
-- **API 서비스**: HTTP 요청/응답, 에러 처리
-
-### 🔧 테스트 설정
-
-#### vitest.config.ts
-```typescript
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
-    globals: true,
-    css: true,
-    coverage: {
-      reporter: ['text', 'json', 'html']
-    }
-  }
-});
-```
-
-#### MSW 모킹
-- 실제 네트워크 요청 차단
-- 일관된 테스트 데이터 제공
-- API 에러 상황 시뮬레이션
-
-### 📊 테스트 Best Practices
-
-#### 1. **사용자 관점 테스트** (RTL 활용)
-```typescript
-// ❌ 구현 세부사항 테스트
-expect(wrapper.state().isLoading).toBe(true);
-
-// ✅ 사용자가 보는 것 테스트  
-expect(screen.getByText('로딩 중...')).toBeInTheDocument();
-expect(screen.getByRole('button', { name: '로맨스' })).toBeInTheDocument();
-```
-
-#### 2. **격리된 테스트** (독립적 실행)
-```typescript
-// src/test/setup.ts에서 자동 정리
-afterEach(() => {
-  server.resetHandlers(); // MSW 핸들러 초기화
-  cleanup(); // React Testing Library 정리
-});
-```
-
-#### 3. **모킹 전략** (MSW로 네트워크 격리)
-```typescript
-// 실제 JSON 데이터 활용
-const pageData = await loadPageData('romance', page);
-return HttpResponse.json(pageData);
-
-// 에러 시나리오 테스트
-http.get('/api/comics/error', () => {
-  return HttpResponse.json({ error: 'Server Error' }, { status: 500 });
-});
-```
-
-#### 4. **접근성 테스트** (A11y 검증)
-```typescript
-// ARIA 속성 검증
-expect(screen.getByRole('group', { name: /작품 필터링 옵션/ })).toBeInTheDocument();
-
-// 키보드 네비게이션 테스트
-await user.tab(); // Tab 키 시뮬레이션
-await user.keyboard('{Enter}'); // Enter 키 시뮬레이션
-```
-
-#### 5. **에러 처리** (다양한 시나리오)
-```typescript
-// 네트워크 에러, 서버 에러, 404 등 모든 경우 테스트
-it('네트워크 에러 시 적절한 에러 메시지를 반환한다', async () => {
-  await expect(fetchGenreRanking('invalid', 1)).rejects.toThrow('Network error');
-});
-```
-
-### 🚀 CI/CD 통합
-
-```bash
-# 빌드 전 테스트 실행
-npm run test:run && npm run build
-```
 
 ## 📈 성능 최적화
 

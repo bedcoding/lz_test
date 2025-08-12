@@ -18,12 +18,8 @@ async function loadPageData(genre: 'romance' | 'drama', page: number): Promise<C
 
 /**
  * 실제 JSON 파일 기반 Mock 핸들러
- * 
- * 하드코딩된 페이지 제한이나 Mock 데이터 없이,
- * 실제 data/ 폴더의 JSON 파일을 직접 읽어서 사용합니다.
- * 이를 통해 실제 데이터와 100% 일치하는 테스트 환경을 제공합니다.
+ * 실제 data/ 폴더의 JSON 파일을 직접 읽어서 사용
  */
-
 export const handlers = [
   // 로맨스 랭킹 API
   http.get('/api/comics/romance', async ({ request }) => {
@@ -41,7 +37,7 @@ export const handlers = [
       );
     }
     
-    // 실제 JSON 파일의 데이터를 그대로 반환 (hasNext 포함)
+    // 실제 JSON 파일의 데이터를 그대로 반환
     return HttpResponse.json(pageData);
   }),
 
@@ -61,7 +57,7 @@ export const handlers = [
       );
     }
     
-    // 실제 JSON 파일의 데이터를 그대로 반환 (hasNext 포함)
+    // 실제 JSON 파일의 데이터를 그대로 반환
     return HttpResponse.json(pageData);
   }),
 

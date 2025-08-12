@@ -1,7 +1,7 @@
 import { ComicRankApiResponse, ComicRankApiSuccessResponse } from '@/types/ranking';
 
 const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? ''
+  ? ''  // vercel 배포 환경에서는 빈 문자열로 설정
   : 'http://localhost:3000';
 
 export class ApiError extends Error {
@@ -23,7 +23,6 @@ export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuc
       headers: {
         'Content-Type': 'application/json',
       },
-      cache: 'no-store', // 개발 중에는 캐시 비활성화
     });
 
     if (!response.ok) {
@@ -50,7 +49,7 @@ export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuc
 }
 
 /**
- * 장르별 랭킹 데이터를 가져오는 함수 (확장 가능한 구조)
+ * 장르별 랭킹 데이터를 가져오는 함수
  * @param genre 장르명 (romance, drama 등)
  * @param page 페이지 번호 (1 이상의 자연수)
  */
@@ -61,7 +60,6 @@ export async function fetchGenreRanking(genre: string, page: number): Promise<Co
       headers: {
         'Content-Type': 'application/json',
       },
-      cache: 'no-store',
     });
 
     if (!response.ok) {
