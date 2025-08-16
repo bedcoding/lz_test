@@ -41,7 +41,7 @@ interface BaseComicFields {
   currentRank: number;
   previousRank: number;
   updatedAt: number;
-  thumbnailSrc: string;
+  thumbnailSrc: string | null;
 }
 
 // API Interface (기업 명세서)

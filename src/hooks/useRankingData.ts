@@ -14,6 +14,7 @@ interface UseRankingDataState {
 }
 
 export function useRankingData(genre: GenreType = 'romance') {
+  // 무한스크롤/페이지네이션 상태
   const [state, setState] = useState<UseRankingDataState>({
     items: [],
     isLoading: true,
@@ -87,7 +88,7 @@ export function useRankingData(genre: GenreType = 'romance') {
       setState(prev => ({
         ...prev,
         isLoadingMore: false,
-        hasMore: false, // 🔥 에러 발생 시 무한스크롤 중단
+        hasMore: false,
         error: errorMessage
       }));
     }

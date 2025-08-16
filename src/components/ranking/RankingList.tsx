@@ -102,8 +102,8 @@ interface RankingListProps {
   hasMore: boolean;
   error: string | null;
   onLoadMore: () => void;
-  onRetryLoadMore: () => void; // 무한스크롤 재시도 함수 추가
-  loadMoreTriggerRef: RefObject<HTMLDivElement>;
+  onRetryLoadMore: () => void;
+  loadMoreTriggerRef: RefObject<HTMLDivElement | null>;
   className?: string;
 }
 

@@ -61,6 +61,45 @@ const ThumbnailImage = styled(Image)`
   }
 `;
 
+// 이미지 로딩중 placeholder (이미지 로드되기 전까지 임시로 보여주는 애니메이션)
+const ImagePlaceholder = styled.div`
+  position: absolute;
+  inset: 0;
+  border-radius: ${({ theme }) => theme.borderRadius.md};
+  background: linear-gradient(
+    90deg, 
+    #f0f0f0 0%, 
+    #f5f5f5 25%, 
+    #ffffff 50%, 
+    #f5f5f5 75%, 
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  &.hide {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+`;
+
+// 이미지 로드 실패 또는 썸네일 부재 시 표시되는 간단한 플레이스홀더
+const ThumbnailFallback = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0,0,0,0.04), rgba(0,0,0,0.08));
+  color: ${({ theme }) => theme.colors.text.secondary};
+  font-size: ${({ theme }) => theme.fonts.size.xs};
+`;
+
 const ContentArea = styled.div`
   flex: 1;
   min-width: 0;
@@ -187,29 +226,39 @@ const RankingItem = memo(function RankingItem({ item, className }: RankingItemPr
   };
 
   return (
-    <ItemContainer className={className}>
+    <ItemContainer 
+      role="article"
+      className={className}
+      aria-labelledby={`title-${item.id}`}
+    >
       <Thumbnail>
-        {thumbnailSrc && (
+        {/* 이미지 로딩 애니메이션 */}
+        <ImagePlaceholder className={imageLoaded ? 'hide' : ''} />
+        
+        {thumbnailSrc && !imageError && (
           <ThumbnailImage 
-            src={thumbnailSrc} 
-            alt={`${title} 썸네일`}
+            src={thumbnailSrc}
+            alt={`${title} 웹툰 썸네일, ${artistNames} 작가, ${stateText}, ${freeEpisodeText}`}
             fill
             sizes="(max-width: 768px) 60px, 80px"
             style={{ objectFit: 'cover' }}
             className={getImageClassName()}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R/i+C4Q1bdkESd6zSeUTVQ2cUQQhgkO9Fv7cfdFn7J4X0c3RP8A8fhcFGPf8WGJZ7k5NmnMzNl9Q/xLjyLnfgdfEcBRyedbYv8AjyHOe7l+6Ox8oNAwwCN8ggtPalyDo1sRUUF/pWp4YFi4lQeT9tG7nj9VTd3HYKV86P8ATYHcTcYQDrn6Pvo+yVmPrlZrQFa5JQJJ6SdCCMz7j1xgKqRr8yF+fV9AYnQKRFQeJ8fOCtMEzm8KcwfZaBvg=="
           />
+        )}
+        {(!thumbnailSrc || imageError) && (
+          <ThumbnailFallback aria-label="썸네일 로드 실패">
+            준비중
+          </ThumbnailFallback>
         )}
       </Thumbnail>
       
       <ContentArea>
         <TopRow>
           <RankAndTitle>
-            <RankNumber>{currentRank}</RankNumber>
-            <Title>{title}</Title>
+            <RankNumber aria-label={`${currentRank}위`}>{currentRank}</RankNumber>
+            <Title id={`title-${item.id}`}>{title}</Title>
           </RankAndTitle>
           <RankingStatus 
             currentRank={currentRank} 

@@ -1,4 +1,5 @@
 # 웹툰 랭킹 조회
+> **Github**: [https://github.com/bedcoding/lz_test](https://github.com/bedcoding/lz_test)
 
 > **Live Demo**: [https://lz-test-one.vercel.app/](https://lz-test-one.vercel.app/)
 
