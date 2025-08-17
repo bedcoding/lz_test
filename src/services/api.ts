@@ -1,8 +1,20 @@
 import { ComicRankApiResponse, ComicRankApiSuccessResponse } from '@/types/ranking';
 
-const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? ''  // vercel 배포 환경에서는 빈 문자열로 설정
-  : 'http://localhost:3000';
+// 환경별 BASE_URL 설정 (서버/클라이언트 구분)
+const getBaseUrl = () => {
+  if (typeof window === 'undefined') {
+    // 서버 환경: 절대 URL 필요
+    if (process.env.NODE_ENV === 'production') {
+      return process.env.VERCEL_URL 
+        ? `https://${process.env.VERCEL_URL}`
+        : 'https://lz-test-one.vercel.app';
+    }
+    return 'http://localhost:3000';
+  } else {
+    // 클라이언트 환경: 상대 경로 가능
+    return process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000';
+  }
+};
 
 export class ApiError extends Error {
   constructor(message: string, public status?: number) {
@@ -18,7 +30,7 @@ export class ApiError extends Error {
  */
 export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuccessResponse> {
   try {
-    const response = await fetch(`${BASE_URL}/api/comics/romance?page=${page}`, {
+    const response = await fetch(`${getBaseUrl()}/api/comics/romance?page=${page}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +67,7 @@ export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuc
  */
 export async function fetchGenreRanking(genre: string, page: number): Promise<ComicRankApiSuccessResponse> {
   try {
-    const response = await fetch(`${BASE_URL}/api/comics/${genre}?page=${page}`, {
+    const response = await fetch(`${getBaseUrl()}/api/comics/${genre}?page=${page}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
