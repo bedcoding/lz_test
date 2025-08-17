@@ -109,7 +109,7 @@ export function useRankingData(genre: GenreType = 'romance', initialData?: Comic
 
   // 최초 실행시 초기 데이터 로드
   useEffect(() => {
-    if (isFirstMount && initialData) {
+    if (isFirstMount && initialData && initialData.length > 0) {
       setIsFirstMount(false);
       return;
     }
