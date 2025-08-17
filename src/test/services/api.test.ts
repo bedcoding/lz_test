@@ -90,7 +90,7 @@ describe('API 서비스', () => {
 
       await expect(fetchGenreRanking('romance', 1)).rejects.toThrow(ApiError);
       await expect(fetchGenreRanking('romance', 1)).rejects.toThrow(
-        '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.'
+        '네트워크 오류가 발생했습니다.'
       );
     });
 

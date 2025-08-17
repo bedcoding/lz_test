@@ -1,9 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 import { FilterState, FilterType } from '@/types/ranking';
 import { getFilterLabel } from '@/utils/filter';
+import Button from '@/components/common/Button';
 
+// 메인 컨테이너 - 필터 버튼들을 가로로 배치, 모바일에서 wrap 허용
 const FilterContainer = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.xs};
@@ -15,39 +15,6 @@ const FilterContainer = styled.div`
   }
 `;
 
-const FilterButton = styled.button<{ $active: boolean }>`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  background-color: ${({ theme, $active }) => 
-    $active ? theme.colors.primary : theme.colors.background
-  };
-  color: ${({ theme, $active }) => 
-    $active ? 'white' : theme.colors.text.primary
-  };
-  font-size: ${({ theme }) => theme.fonts.size.sm};
-  font-weight: ${({ theme }) => theme.fonts.weight.medium};
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  white-space: nowrap;
-  
-  &:hover {
-    ${({ $active, theme }) => !$active && `
-      border-color: ${theme.colors.primary};
-      background-color: ${theme.colors.surface};
-    `}
-  }
-  
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.fonts.size.xs};
-  }
-`;
 
 interface RankingFilterProps {
   filters: FilterState;
@@ -69,15 +36,16 @@ export default function RankingFilter({
   return (
     <FilterContainer className={className} role="group" aria-label="작품 필터링 옵션">
       {filterTypes.map((filterType) => (
-        <FilterButton
+        <Button
           key={filterType}
-          $active={filters[filterType]}
+          size="md"
+          active={filters[filterType]}
           onClick={() => handleFilterClick(filterType)}
           aria-pressed={filters[filterType]}
           aria-label={`${getFilterLabel(filterType)} 필터 ${filters[filterType] ? '해제' : '적용'}`}
         >
           {getFilterLabel(filterType)}
-        </FilterButton>
+        </Button>
       ))}
     </FilterContainer>
   );

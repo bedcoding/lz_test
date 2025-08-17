@@ -44,7 +44,7 @@ export async function fetchRomanceRanking(page: number): Promise<ComicRankApiSuc
     
     // 네트워크 에러 등
     console.error('API fetch error:', error);
-    throw new ApiError('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    throw new ApiError('네트워크 오류가 발생했습니다.');
   }
 }
 
@@ -79,6 +79,6 @@ export async function fetchGenreRanking(genre: string, page: number): Promise<Co
     }
     
     console.error('API fetch error:', error);
-    throw new ApiError('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    throw new ApiError('네트워크 오류가 발생했습니다.');
   }
 }

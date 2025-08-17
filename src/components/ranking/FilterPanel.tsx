@@ -1,9 +1,10 @@
-'use client';
-
+// 필터 + 장르 선택 패널
 import styled from 'styled-components';
 import { FilterState, FilterType, GenreType, GenreState } from '@/types/ranking';
 import { getFilterLabel, getGenreLabel } from '@/utils/filter';
+import Button from '@/components/common/Button';
 
+// 메인 컨테이너 - 필터 섹션들을 세로로 스택
 const FilterPanelContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.md};
@@ -12,23 +13,26 @@ const FilterPanelContainer = styled.div`
   overflow: hidden;
 `;
 
+// 각 필터 행 - 라벨과 버튼들을 가로로 배치 (모바일에서는 세로로 변경)
 const FilterRow = styled.div`
   display: flex;
-  align-items: center;
+  align-items: center;  // 텍스트 세로 중앙 정렬 ('필터', '장르')
   padding: ${({ theme }) => theme.spacing.lg};
   
+  // 마지막 필터 행만 제외하고 테두리 추가
   &:not(:last-child) {
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column;   // 모바일에서는 필터를 세로로 배치함
+    align-items: flex-start;  // 가로 왼쪽 정렬
     gap: ${({ theme }) => theme.spacing.sm};
     padding: ${({ theme }) => theme.spacing.md};
   }
 `;
 
+// 필터 라벨 - 고정 폭으로 정렬 유지
 const FilterLabel = styled.div`
   font-size: ${({ theme }) => theme.fonts.size.base};
   font-weight: ${({ theme }) => theme.fonts.weight.semibold};
@@ -42,6 +46,7 @@ const FilterLabel = styled.div`
   }
 `;
 
+// 버튼 그룹 컨테이너 - 남은 공간을 모두 차지하며 버튼들을 가로로 배치
 const FilterButtons = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.xs};
@@ -50,74 +55,6 @@ const FilterButtons = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-wrap: wrap;
     width: 100%;
-  }
-`;
-
-const FilterButton = styled.button<{ $active: boolean }>`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  background-color: ${({ theme, $active }) => 
-    $active ? theme.colors.primary : theme.colors.background
-  };
-  color: ${({ theme, $active }) => 
-    $active ? 'white' : theme.colors.text.primary
-  };
-  font-size: ${({ theme }) => theme.fonts.size.sm};
-  font-weight: ${({ theme }) => theme.fonts.weight.medium};
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  white-space: nowrap;
-  
-  &:hover {
-    ${({ $active, theme }) => !$active && `
-      border-color: ${theme.colors.primary};
-      background-color: ${theme.colors.surface};
-    `}
-  }
-  
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.fonts.size.xs};
-  }
-`;
-
-const GenreButton = styled.button<{ $active: boolean }>`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  background-color: ${({ theme, $active }) => 
-    $active ? theme.colors.primary : theme.colors.background
-  };
-  color: ${({ theme, $active }) => 
-    $active ? 'white' : theme.colors.text.primary
-  };
-  font-size: ${({ theme }) => theme.fonts.size.sm};
-  font-weight: ${({ theme }) => theme.fonts.weight.medium};
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  white-space: nowrap;
-  
-  &:hover {
-    ${({ $active, theme }) => !$active && `
-      border-color: ${theme.colors.primary};
-      background-color: ${theme.colors.surface};
-    `}
-  }
-  
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.fonts.size.xs};
   }
 `;
 
@@ -154,15 +91,16 @@ export default function FilterPanel({
         <FilterLabel>필터</FilterLabel>
         <FilterButtons role="group" aria-label="작품 필터링 옵션">
           {filterTypes.map((filterType) => (
-            <FilterButton
+            <Button
               key={filterType}
-              $active={filters[filterType]}
+              size="md"
+              active={filters[filterType]}
               onClick={() => handleFilterClick(filterType)}
               aria-pressed={filters[filterType]}
               aria-label={`${getFilterLabel(filterType)} 필터 ${filters[filterType] ? '해제' : '적용'}`}
             >
               {getFilterLabel(filterType)}
-            </FilterButton>
+            </Button>
           ))}
         </FilterButtons>
       </FilterRow>
@@ -172,15 +110,16 @@ export default function FilterPanel({
         <FilterLabel>장르</FilterLabel>
         <FilterButtons role="group" aria-label="장르 선택">
           {genres.map((genre) => (
-            <GenreButton
+            <Button
               key={genre}
-              $active={genreState.selectedGenre === genre}
+              size="md"
+              active={genreState.selectedGenre === genre}
               onClick={() => handleGenreClick(genre)}
               aria-pressed={genreState.selectedGenre === genre}
               aria-label={`${getGenreLabel(genre)} 장르 선택`}
             >
               {getGenreLabel(genre)}
-            </GenreButton>
+            </Button>
           ))}
         </FilterButtons>
       </FilterRow>

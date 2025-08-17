@@ -1,6 +1,8 @@
+// 랭킹 변동을 나타내는 컴포넌트
 import styled from 'styled-components';
 import { getRankingStatus, getRankingIcon } from '@/utils/ranking';
 
+// 메인 컨테이너 - 아이콘과 텍스트를 가로로 정렬, 상태에 따라 색상 변경
 const StatusContainer = styled.div<{ $status: 'up' | 'down' | 'same' }>`
   display: flex;
   align-items: center;
@@ -21,11 +23,13 @@ const StatusContainer = styled.div<{ $status: 'up' | 'down' | 'same' }>`
   }};
 `;
 
+// 랭킹 상태 아이콘 (↑, ↓, -)
 const StatusIcon = styled.span`
   font-size: ${({ theme }) => theme.fonts.size.xs};
   line-height: 1;
 `;
 
+// 순위 변동 수치 텍스트
 const StatusText = styled.span`
   font-size: ${({ theme }) => theme.fonts.size.xs};
 `;
@@ -48,12 +52,17 @@ export default function RankingStatus({
 
   return (
     <StatusContainer $status={status} className={className}>
+      {/* 랭킹 변동 아이콘 (↑↓-) */}
       <StatusIcon aria-hidden="true">{icon}</StatusIcon>
+      
+      {/* 변동 수치 표시 (변동이 있고 수치가 0보다 클 때만) */}
       {showDiff && diff > 0 && (
         <StatusText>
           {diff}
         </StatusText>
       )}
+      
+      {/* 접근성: 스크린 리더 사용자를 위한 텍스트 (화면에는 보이지 않음) */}
       <span className="sr-only">
         {status === 'up' 
           ? `${diff}단계 상승` 

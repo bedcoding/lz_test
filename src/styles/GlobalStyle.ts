@@ -1,8 +1,14 @@
-'use client';
-
 import { createGlobalStyle } from 'styled-components';
 import { Theme } from './theme';
 
+/**
+ * 전역 CSS 스타일 - 웹사이트 전체에 적용
+ * ThemeProvider에서 사용되어 모든 컴포넌트의 기본 스타일 설정
+ * - CSS 리셋 (브라우저 기본 스타일 제거)
+ * - 기본 폰트, 색상 설정 (theme 연동)
+ * - 유틸리티 클래스 제공
+ * - 접근성 관련 스타일 포함
+ */
 export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   * {
     margin: 0;
@@ -52,22 +58,22 @@ export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     font-size: inherit;
   }
 
-  /* 스크롤바 스타일링 */
+  /* 스크롤바 스타일링 (Chrome, Safari, Edge 지원) */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 8px;  // 스크롤바 너비
   }
 
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.surface};
+    background: ${({ theme }) => theme.colors.surface};  // 스크롤바 배경 트랙
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.text.light};
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    background: ${({ theme }) => theme.colors.text.light};  // 스크롤바 핸들 (드래그 부분)
+    border-radius: ${({ theme }) => theme.borderRadius.sm};  // 둥근 모서리
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.text.secondary};
+    background: ${({ theme }) => theme.colors.text.secondary}; // 마우스 호버 시 더 진한 색상
   }
 
   /* 포커스 스타일 */

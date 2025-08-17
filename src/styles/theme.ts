@@ -1,3 +1,13 @@
+/**
+ * styled-components에서 사용하는 디자인 시스템 테마
+ * 모든 컴포넌트에서 일관된 색상, 폰트, 간격 등을 관리
+ * 
+ * 사용 예시:
+ * const StyledDiv = styled.div`
+ *   color: ${({ theme }) => theme.colors.primary};
+ *   font-size: ${({ theme }) => theme.fonts.size.base};
+ * `;
+ */
 export const theme = {
   colors: {
     primary: '#FF6B6B',        // 메인 컬러

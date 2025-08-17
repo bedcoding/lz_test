@@ -1,6 +1,8 @@
+// 스켈레톤 로딩 아이템
 import { memo } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+// 시머 애니메이션 - 로딩 상태를 나타내는 좌우 이동 효과
 const shimmer = keyframes`
   0% {
     background-position: -200px 0;
@@ -10,6 +12,7 @@ const shimmer = keyframes`
   }
 `;
 
+// 메인 컨테이너 - RankingItem의 ItemContainer와 동일한 레이아웃
 const SkeletonContainer = styled.div`
   display: flex;
   align-items: flex-start;
@@ -25,6 +28,7 @@ const SkeletonContainer = styled.div`
   }
 `;
 
+// 기본 스켈레톤 스타일 - 모든 스켈레톤 요소들이 상속
 const SkeletonBase = styled.div`
   background: linear-gradient(
     90deg,
@@ -37,6 +41,7 @@ const SkeletonBase = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.sm};
 `;
 
+// 썸네일 스켈레톤 - 고정 크기, 축소되지 않음
 const SkeletonThumbnail = styled(SkeletonBase)`
   flex-shrink: 0;
   width: 80px;
@@ -49,11 +54,13 @@ const SkeletonThumbnail = styled(SkeletonBase)`
   }
 `;
 
+// 콘텐츠 영역 - 나머지 공간을 모두 차지
 const SkeletonContent = styled.div`
   flex: 1;
   min-width: 0;
 `;
 
+// 상단 행 - 제목과 랭킹 상태를 양 끝에 배치
 const SkeletonTopRow = styled.div`
   display: flex;
   align-items: flex-start;
@@ -62,6 +69,7 @@ const SkeletonTopRow = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.xs};
 `;
 
+// 제목 스켈레톤 - 너비를 60%로 제한
 const SkeletonTitle = styled(SkeletonBase)`
   height: 20px;
   width: 60%;
@@ -71,17 +79,20 @@ const SkeletonTitle = styled(SkeletonBase)`
   }
 `;
 
+// 랭킹 상태 스켈레톤 - 작은 고정 크기
 const SkeletonRankStatus = styled(SkeletonBase)`
   width: 40px;
   height: 20px;
 `;
 
+// 작가 스켈레톤 - 비교적 작은 크기
 const SkeletonArtist = styled(SkeletonBase)`
   height: 14px;
   width: 40%;
   margin: ${({ theme }) => theme.spacing.xs} 0;
 `;
 
+// 메타 정보 행 - 여러 태그들을 가로로 배치
 const SkeletonMetaRow = styled.div`
   display: flex;
   align-items: center;
@@ -94,11 +105,13 @@ const SkeletonMetaRow = styled.div`
   }
 `;
 
+// 일반 태그 스켈레톤
 const SkeletonTag = styled(SkeletonBase)`
   height: 12px;
   width: 60px;
 `;
 
+// 무료 회차 스켈레톤
 const SkeletonFreeEpisode = styled(SkeletonBase)`
   height: 12px;
   width: 50px;

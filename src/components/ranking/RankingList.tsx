@@ -1,19 +1,21 @@
-'use client';
-
+// 웹툰 무한스크롤 리스트
 import { RefObject } from 'react';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingItem from './RankingItem';
 import SkeletonItem from '@/components/common/SkeletonItem';
+import Button from '@/components/common/Button';
 
+// 메인 리스트 컨테이너 - flex column으로 아이템들을 세로 배치
 const ListContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  // RankingItem 리스트들 세로 배치
   gap: ${({ theme }) => theme.spacing.md};
 `;
 
+// 빈 상태 표시 - 필터링 결과가 없을 때
 const EmptyState = styled.div`
-  text-align: center;
+  text-align: center;  // 텍스트 중앙 정렬
   padding: ${({ theme }) => theme.spacing['2xl']};
   color: ${({ theme }) => theme.colors.text.secondary};
 `;
@@ -29,14 +31,16 @@ const EmptyDescription = styled.p`
   line-height: 1.6;
 `;
 
+// 무한스크롤 트리거 - IntersectionObserver가 감지할 요소
 const LoadMoreTrigger = styled.div<{ $hidden?: boolean }>`
   height: ${({ $hidden }) => $hidden ? '0' : '20px'};
   margin: ${({ $hidden, theme }) => $hidden ? '0' : `${theme.spacing.lg} 0`};
 `;
 
+// 스켈레톤 로딩 컨테이너 - 추가 데이터 로딩 중 표시
 const SkeletonContainer = styled.div<{ $isFirst?: boolean }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  // 스켈레톤 아이템들도 세로 스택
   gap: ${({ theme }) => theme.spacing.md};
   
   ${({ $isFirst, theme }) => $isFirst && `
@@ -44,10 +48,11 @@ const SkeletonContainer = styled.div<{ $isFirst?: boolean }>`
   `}
 `;
 
+// 무한스크롤 에러 UI - 재시도 버튼 포함
 const InfiniteScrollError = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column;  // 에러 메시지와 버튼을 세로 배치
+  align-items: center;     // 수평 중앙 정렬
   gap: ${({ theme }) => theme.spacing.md};
   padding: ${({ theme }) => theme.spacing.xl};
   margin-top: ${({ theme }) => theme.spacing.lg};
@@ -61,28 +66,6 @@ const ErrorText = styled.p`
   text-align: center;
   margin: 0;
   font-size: ${({ theme }) => theme.fonts.size.sm};
-`;
-
-const RetryButton = styled.button`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius.sm};
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: ${({ theme }) => theme.fonts.size.sm};
-  font-weight: ${({ theme }) => theme.fonts.weight.medium};
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: white;
-  }
-
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
-  }
 `;
 
 const ErrorMessage = styled.div`
@@ -118,7 +101,7 @@ export default function RankingList({
   loadMoreTriggerRef,
   className
 }: RankingListProps) {
-  // 초기 로딩 상태 - 스켈레톤 UI 표시
+  // 초기 로딩 상태 - 10개의 스켈레톤 UI 표시
   if (isLoading && items.length === 0) {
     return (
       <ListContainer className={className}>
@@ -193,9 +176,9 @@ export default function RankingList({
       {items.length > 0 && error && !hasMore && !isLoadingMore && (
         <InfiniteScrollError>
           <ErrorText>{error}</ErrorText>
-          <RetryButton onClick={onRetryLoadMore}>
+          <Button active onClick={onRetryLoadMore}>
             다시 시도
-          </RetryButton>
+          </Button>
         </InfiniteScrollError>
       )}
 

@@ -11,16 +11,17 @@ import {
   getFreeEpisodeText 
 } from '@/utils/ranking';
 
+// 메인 컨테이너 - 썸네일과 콘텐츠를 가로로 배치
 const ItemContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  gap: ${({ theme }) => theme.spacing.md};
+  align-items: flex-start;  // 상단 정렬 (썸네일 높이가 다를 수 있음)
+  gap: ${({ theme }) => theme.spacing.md};  // 썸네일과 콘텐츠 사이 간격
   padding: ${({ theme }) => theme.spacing.lg};
   background-color: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   transition: all 0.2s ease-in-out;
-  
+
   &:hover {
     box-shadow: ${({ theme }) => theme.shadows.md};
     transform: translateY(-2px);
@@ -32,14 +33,18 @@ const ItemContainer = styled.div`
   }
 `;
 
+// 썸네일 컨테이너 - 웹툰/드라마 포스터를 표시하는 고정 크기 컨테이너
 const Thumbnail = styled.div`
-  flex-shrink: 0;
+  flex-shrink: 0;  // 공간이 부족해도 썸네일 크기 유지 (축소 비율 0)
+  
+  // 기본 크기 설정 (4:5 비율 - 포스터 형태)
   width: 80px;
   height: 100px;
-  background-color: ${({ theme }) => theme.colors.border};
+  
+  // 스타일링
+  background-color: ${({ theme }) => theme.colors.border};  // 이미지 로딩 전 기본 배경색
   border-radius: ${({ theme }) => theme.borderRadius.md};
-  overflow: hidden;
-  position: relative;
+  position: relative;  // 자식 요소(오버레이, 뱃지 등)들의 위치 기준점
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 60px;
@@ -47,6 +52,7 @@ const Thumbnail = styled.div`
   }
 `;
 
+// 썸네일 이미지가 갑자기 나타나지 않고 부드럽게 뜨도록 처리 (깜빡임 방지)
 const ThumbnailImage = styled(Image)`
   border-radius: ${({ theme }) => theme.borderRadius.md};
   opacity: 0;
@@ -100,24 +106,28 @@ const ThumbnailFallback = styled.div`
   font-size: ${({ theme }) => theme.fonts.size.xs};
 `;
 
+// 콘텐츠 영역 - 썸네일 옆의 모든 텍스트 콘텐츠를 담는 컨테이너
 const ContentArea = styled.div`
-  flex: 1;
-  min-width: 0;
+  flex: 1;  // 썸네일을 제외한 나머지 공간 모두 차지 (없으면 내부 콘텐츠 크기만큼만 차지함)
+  min-width: 0;  // flex item의 최소 너비 제한 해제 (컨테이너가 작아질 때 콘텐츠 영역도 함께 축소될 수 있도록 허용)
 `;
 
+// [랭킹번호 + 제목]과 [랭킹변동 상태]를 좌우 양 끝에 배치하는 상단 행
 const TopRow = styled.div`
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: flex-start;  // 세로축 기준 상단 정렬 (요소들의 높이가 달라도 위쪽 기준선으로 맞춤)
+  justify-content: space-between;  // 좌우 양 끝에 배치 (랭킹번호 + 제목 ←→ 랭킹변동 상태)
   gap: ${({ theme }) => theme.spacing.sm};
   margin-bottom: ${({ theme }) => theme.spacing.xs};
 `;
 
+// 랭킹 번호와 제목을 함께 담는 컨테이너 - 남은 공간 모두 사용
 const RankAndTitle = styled.div`
   flex: 1;
   min-width: 0;
 `;
 
+// 랭킹 번호 스타일 - 고정 폭으로 정렬 유지
 const RankNumber = styled.span`
   display: inline-block;
   font-size: ${({ theme }) => theme.fonts.size.xl};
@@ -131,8 +141,9 @@ const RankNumber = styled.span`
   }
 `;
 
+// 작품 제목
 const Title = styled.h3`
-  display: inline;
+  display: inline;  // 랭킹 번호 다음에 제목 넣을때 줄바꿈하지 않고 한 줄로 표기
   font-size: ${({ theme }) => theme.fonts.size.lg};
   font-weight: ${({ theme }) => theme.fonts.weight.semibold};
   color: ${({ theme }) => theme.colors.text.primary};
@@ -144,6 +155,7 @@ const Title = styled.h3`
   }
 `;
 
+// 작가명
 const Artists = styled.p`
   font-size: ${({ theme }) => theme.fonts.size.sm};
   color: ${({ theme }) => theme.colors.text.secondary};
@@ -151,12 +163,14 @@ const Artists = styled.p`
   line-height: 1.4;
 `;
 
+// 메타 정보 컨테이너 - 무료회차 + 연재상태(연재중/완결), 스케줄 2개 행을 세로로 배치
 const MetaInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xs};
 `;
 
+// 메타 정보 행 - 이 행에 들어가는 값들을 모두 가로로 나열함 (예시: 무료회차 + 연재상태)
 const InfoRow = styled.div`
   display: flex;
   align-items: center;
@@ -170,11 +184,13 @@ const InfoRow = styled.div`
   }
 `;
 
+// 무료 회차 강조 스타일 ("3화 무료")
 const FreeEpisodes = styled.span`
   color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fonts.weight.medium};
 `;
 
+// 콘텐츠 상태 뱃지 (연재중/완결 등) - 완결 여부에 따라 색상 변경
 const ContentState = styled.span<{ $isCompleted: boolean }>`
   padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
   border-radius: ${({ theme }) => theme.borderRadius.sm};
@@ -255,6 +271,7 @@ const RankingItem = memo(function RankingItem({ item, className }: RankingItemPr
       </Thumbnail>
       
       <ContentArea>
+        {/* 현재랭킹, 제목, 랭킹변동 */}
         <TopRow>
           <RankAndTitle>
             <RankNumber aria-label={`${currentRank}위`}>{currentRank}</RankNumber>
@@ -266,11 +283,13 @@ const RankingItem = memo(function RankingItem({ item, className }: RankingItemPr
           />
         </TopRow>
         
+        {/* 작가명 */}
         {artistNames && (
           <Artists>{artistNames}</Artists>
         )}
-        
+
         <MetaInfo>
+          {/* 3화 무료, 연재중/완결 버튼 */}
           <InfoRow>
             <FreeEpisodes>{freeEpisodeText}</FreeEpisodes>
             <ContentState $isCompleted={isCompleted}>
@@ -278,6 +297,7 @@ const RankingItem = memo(function RankingItem({ item, className }: RankingItemPr
             </ContentState>
           </InfoRow>
           
+          {/* 매주 월요일 연재 */}
           {!isCompleted && scheduleText && (
             <InfoRow>
               <span>{scheduleText}</span>

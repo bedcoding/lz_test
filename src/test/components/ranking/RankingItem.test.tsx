@@ -161,10 +161,10 @@ describe('RankingItem 컴포넌트', () => {
     );
 
     const thumbnail = screen.getByRole('img');
-    expect(thumbnail).toHaveAttribute('alt', '테스트 웹툰 썸네일');
+    expect(thumbnail).toHaveAttribute('alt', '테스트 웹툰 웹툰 썸네일, 테스트 작가 작가, 연재중, 5화 무료');
   });
 
-  it('이미지 로딩 에러 시 회색 박스만 표시된다', async () => {
+  it('이미지 로딩 에러 시 대체 텍스트가 표시된다', async () => {
     // 에러를 발생시키는 이미지 URL (유효한 형식이지만 실제로는 존재하지 않음)
     const errorItem: ComicRankItem = {
       ...mockItem,
@@ -182,8 +182,11 @@ describe('RankingItem 컴포넌트', () => {
     // 이미지 에러 이벤트 발생
     thumbnail.dispatchEvent(new Event('error'));
 
+    // 에러 상태에서는 대체 텍스트가 표시됨
     await waitFor(() => {
-      expect(thumbnail).toHaveClass('error');
+      const fallback = screen.getByLabelText('썸네일 로드 실패');
+      expect(fallback).toBeInTheDocument();
+      expect(fallback).toHaveTextContent('준비중');
     });
   });
 
