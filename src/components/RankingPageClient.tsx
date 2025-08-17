@@ -1,0 +1,71 @@
+'use client';
+
+import FilterPanel from '@/components/ranking/FilterPanel';
+import RankingList from '@/components/ranking/RankingList';
+import { useRankingData } from '@/hooks/useRankingData';
+import { useFilter } from '@/hooks/useFilter';
+import { useGenre } from '@/hooks/useGenre';
+import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
+import { ComicRankItem } from '@/types/ranking';
+
+interface RankingPageClientProps {
+  initialData: ComicRankItem[];
+}
+
+export default function RankingPageClient({ 
+  initialData
+}: RankingPageClientProps) {
+  // 장르 상태 관리
+  const { genreState, handleGenreChange } = useGenre();
+
+  // 랭킹 데이터 관리 (초기 데이터 직접 전달)
+  const {
+    items,
+    isLoading,
+    isLoadingMore,
+    hasMore,
+    error,
+    loadMoreData,
+    retryLoadMore
+  } = useRankingData(genreState.selectedGenre, initialData);
+
+  // 필터링 관리
+  const {
+    filters,
+    filteredItems,
+    handleFilterToggle
+  } = useFilter(items);
+
+  // 무한 스크롤 관리
+  const { loadMoreTriggerRef } = useInfiniteScroll({
+    hasMore,
+    isLoading: isLoadingMore,
+    onLoadMore: loadMoreData
+  });
+
+  return (
+    <>
+      {/* 통합 필터 패널 */}
+      <FilterPanel
+        filters={filters}
+        onFilterChange={handleFilterToggle}
+        genreState={genreState}
+        onGenreChange={handleGenreChange}
+      />
+      
+      {/* 랭킹 리스트 */}
+      <div id="main-content">
+        <RankingList
+          items={filteredItems}
+          isLoading={isLoading}
+          isLoadingMore={isLoadingMore}
+          hasMore={hasMore}
+          error={error}
+          onLoadMore={loadMoreData}
+          onRetryLoadMore={retryLoadMore}
+          loadMoreTriggerRef={loadMoreTriggerRef}
+        />
+      </div>
+    </>
+  );
+}

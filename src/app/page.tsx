@@ -1,40 +1,15 @@
-'use client';
 import { Container, PageHeader, PageTitle, MainContent } from '@/components/layout/Container';
-import FilterPanel from '@/components/ranking/FilterPanel';
-import RankingList from '@/components/ranking/RankingList';
-import { useRankingData } from '@/hooks/useRankingData';
-import { useFilter } from '@/hooks/useFilter';
-import { useGenre } from '@/hooks/useGenre';
-import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
+import RankingPageClient from '@/components/RankingPageClient';
+import { fetchGenreRanking } from '@/services/api';
 
-export default function Home() {
-  // 장르 상태 관리
-  const { genreState, handleGenreChange } = useGenre();
-
-  // 랭킹 데이터 관리
-  const {
-    items,
-    isLoading,
-    isLoadingMore,
-    hasMore,
-    error,
-    loadMoreData,
-    retryLoadMore
-  } = useRankingData(genreState.selectedGenre);
-
-  // 필터링 관리
-  const {
-    filters,
-    filteredItems,
-    handleFilterToggle
-  } = useFilter(items);
-
-  // 무한 스크롤 관리
-  const { loadMoreTriggerRef } = useInfiniteScroll({
-    hasMore,
-    isLoading: isLoadingMore,
-    onLoadMore: loadMoreData
-  });
+// 서버 컴포넌트 - SEO를 위해 서버에서 초기 데이터 렌더링
+export default async function Home() {
+  let initialData = null;
+  try {
+    initialData = await fetchGenreRanking('romance', 1);
+  } catch (error) {
+    console.error('Failed to load initial data:', error);
+  }
 
   return (
     <Container>
@@ -43,27 +18,10 @@ export default function Home() {
       </PageHeader>
       
       <MainContent>
-        {/* 통합 필터 패널 */}
-        <FilterPanel
-          filters={filters}
-          onFilterChange={handleFilterToggle}
-          genreState={genreState}
-          onGenreChange={handleGenreChange}
+        {/* 클라이언트 컴포넌트로 인터랙션 기능 분리 */}
+        <RankingPageClient
+          initialData={initialData?.data || []}
         />
-        
-        {/* 랭킹 리스트 */}
-        <div id="main-content">
-          <RankingList
-            items={filteredItems}
-            isLoading={isLoading}
-            isLoadingMore={isLoadingMore}
-            hasMore={hasMore}
-            error={error}
-            onLoadMore={loadMoreData}
-            onRetryLoadMore={retryLoadMore}
-            loadMoreTriggerRef={loadMoreTriggerRef}
-          />
-        </div>
       </MainContent>
     </Container>
   );

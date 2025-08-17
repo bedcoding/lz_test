@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect, useCallback } from 'react';
 import { ComicRankItem, GenreType } from '@/types/ranking';
 import { fetchGenreRanking, ApiError } from '@/services/api';
@@ -13,15 +11,17 @@ interface UseRankingDataState {
   currentPage: number;
 }
 
-export function useRankingData(genre: GenreType = 'romance') {
-  // 무한스크롤/페이지네이션 상태
+export function useRankingData(genre: GenreType = 'romance', initialData?: ComicRankItem[]) {
+  const [isFirstMount, setIsFirstMount] = useState(true);
+  
+  // 무한스크롤/페이지네이션 상태 (최초 진입시 initialData가 있으면 초기값으로 설정)
   const [state, setState] = useState<UseRankingDataState>({
-    items: [],
-    isLoading: true,
+    items: initialData || [],
+    isLoading: !initialData, // initialData가 있으면 로딩 완료
     isLoadingMore: false,
     hasMore: true,
     error: null,
-    currentPage: 0
+    currentPage: initialData ? 1 : 0 // initialData가 있으면 1페이지
   });
 
   // 첫 페이지 로드
@@ -107,10 +107,15 @@ export function useRankingData(genre: GenreType = 'romance') {
     loadInitialData();
   }, [loadInitialData]);
 
-  // 컴포넌트 마운트 시 또는 장르 변경 시 초기 데이터 로드
+  // 최초 실행시 초기 데이터 로드
   useEffect(() => {
+    if (isFirstMount && initialData) {
+      setIsFirstMount(false);
+      return;
+    }
+
     refreshData();
-  }, [genre, refreshData]);
+  }, [genre, refreshData, initialData]);
 
   // 무한스크롤 재시도 함수
   const retryLoadMore = useCallback(() => {

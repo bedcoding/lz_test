@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { GenreType, GenreState } from '@/types/ranking';
 import { getInitialGenreState } from '@/utils/filter';
