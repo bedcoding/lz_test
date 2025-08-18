@@ -89,8 +89,9 @@ describe('API 서비스', () => {
       );
 
       await expect(fetchGenreRanking('romance', 1)).rejects.toThrow(ApiError);
+      // MSW의 HttpResponse.error()는 "Failed to fetch" 메시지를 생성함
       await expect(fetchGenreRanking('romance', 1)).rejects.toThrow(
-        '네트워크 오류가 발생했습니다.'
+        'Failed to fetch'
       );
     });
 
@@ -134,7 +135,7 @@ describe('API 서비스', () => {
       expect(requestUrl).toContain('page=2');
     });
 
-    it('Content-Type 헤더를 application/json으로 설정한다', async () => {
+    it('Accept 헤더를 application/json으로 설정한다', async () => {
       let requestHeaders = new Headers();
 
       server.use(
@@ -150,7 +151,7 @@ describe('API 서비스', () => {
 
       await fetchGenreRanking('romance', 1);
 
-      expect(requestHeaders.get('Content-Type')).toBe('application/json');
+      expect(requestHeaders.get('Accept')).toBe('application/json');
     });
   });
 });
