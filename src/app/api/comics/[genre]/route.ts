@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ComicRankApiSuccessResponse, ComicRankApiFailResponse, ComicRankItem, RawComicItem } from '@/types/ranking';
+import { ComicRankApiSuccessResponse, ComicRankApiFailResponse, ComicRankItem, RawComicItem, GenreType } from '@/types/ranking';
 import fs from 'fs';
 import path from 'path';
+
+// 지원하는 장르 목록
+const SUPPORTED_GENRES: GenreType[] = ['romance', 'drama'];
 
 // JSON 데이터를 API Interface 명세에 맞게 변환
 function transformToApiInterface(item: RawComicItem): ComicRankItem {
@@ -28,10 +31,22 @@ function transformToApiInterface(item: RawComicItem): ComicRankItem {
   };
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ genre: string }> }
+) {
   try {
     const { searchParams } = new URL(request.url);
     const page = searchParams.get('page') || '1';
+    const { genre } = await params;
+    
+    // 장르 검증
+    if (!SUPPORTED_GENRES.includes(genre as GenreType)) {
+      const errorResponse: ComicRankApiFailResponse = {
+        error: `Unsupported genre: ${genre}. Supported genres: ${SUPPORTED_GENRES.join(', ')}`
+      };
+      return NextResponse.json(errorResponse, { status: 400 });
+    }
     
     // 페이지 번호 검증 (1 이상의 자연수)
     const pageNumber = parseInt(page);
@@ -43,12 +58,12 @@ export async function GET(request: NextRequest) {
     }
 
     // 실제 데이터 파일 경로
-    const dataPath = path.join(process.cwd(), 'data', 'drama', `page_${pageNumber}.json`);
+    const dataPath = path.join(process.cwd(), 'data', genre, `page_${pageNumber}.json`);
     
     // 파일 존재 여부 확인
     if (!fs.existsSync(dataPath)) {
       const errorResponse: ComicRankApiFailResponse = {
-        error: `Page ${pageNumber} not found`
+        error: `Page ${pageNumber} not found for genre ${genre}`
       };
       return NextResponse.json(errorResponse, { status: 404 });
     }
