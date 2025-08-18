@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import FilterPanel from '@/components/ranking/FilterPanel';
 import RankingList from '@/components/ranking/RankingList';
 import { useRankingData } from '@/hooks/useRankingData';
@@ -42,6 +43,22 @@ export default function RankingPageClient({
     isLoading: isLoadingMore,
     onLoadMore: loadMoreData
   });
+
+  // 필터링 결과가 적을 때 자동으로 더 많은 데이터 로드
+  useEffect(() => {
+    const MIN_ITEMS_THRESHOLD = 10; // 최소 아이템 수
+    
+    // 필터링된 결과가 임계값보다 적고, 더 로드할 데이터가 있으며, 현재 로딩 중이 아닌 경우
+    if (
+      filteredItems.length < MIN_ITEMS_THRESHOLD && 
+      hasMore && 
+      !isLoadingMore && 
+      !isLoading &&
+      items.length > 0 // 초기 데이터가 있을 때만
+    ) {
+      loadMoreData();
+    }
+  }, [filteredItems.length, hasMore, isLoadingMore, isLoading, items.length, loadMoreData]);
 
   return (
     <>

@@ -1,5 +1,4 @@
 // 웹툰 무한스크롤 리스트
-import { RefObject } from 'react';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingItem from './RankingItem';
@@ -99,7 +98,7 @@ interface RankingListProps {
   error: string | null;
   onLoadMore: () => void;
   onRetryLoadMore: () => void;
-  loadMoreTriggerRef: RefObject<HTMLDivElement | null>;
+  loadMoreTriggerRef: (node: HTMLDivElement | null) => void;
   className?: string;
 }
 
