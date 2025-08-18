@@ -1,5 +1,5 @@
 import { Container, PageHeader, PageTitle, MainContent } from '@/components/layout/Container';
-import RankingPageClient from '@/components/RankingPageClient';
+import RankingPageClientQuery from '@/components/RankingPageClientQuery';
 import { fetchGenreRanking } from '@/services/api';
 
 // 동적 렌더링 강제 설정 (빌드 시점에 아직 시작되지 않은 내부 서버에서 API를 호출하면 빌드 오류 발생함)
@@ -21,9 +21,9 @@ export default async function Home() {
       </PageHeader>
       
       <MainContent>
-        {/* 클라이언트 컴포넌트로 인터랙션 기능 분리 */}
-        <RankingPageClient
-          initialData={initialData?.data || []}
+        {/* TanStack Query 기반 클라이언트 컴포넌트 */}
+        <RankingPageClientQuery
+          initialResponse={initialData}
         />
       </MainContent>
     </Container>

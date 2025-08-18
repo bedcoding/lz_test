@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "@/components/layout/StyledComponentsRegistry";
 import ThemeProvider from "@/components/layout/ThemeProvider";
+import QueryProvider from "@/providers/QueryProvider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -44,9 +45,11 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.variable}>
         <StyledComponentsRegistry>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
+          <QueryProvider>
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </QueryProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
