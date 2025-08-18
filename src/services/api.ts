@@ -46,9 +46,9 @@ async function fetchJson<T>(url: string, options: FetchOptions = {}): Promise<T>
 
       // 성공 시 JSON 파싱 후 반환
       return await response.json() as T;
-    } catch (error: any) {
+    } catch (error: unknown) {
       // AbortError는 재시도 안함
-      if (error?.name === 'AbortError') {
+      if (error && typeof error === 'object' && 'name' in error && error.name === 'AbortError') {
         throw error;
       }
       
@@ -57,7 +57,10 @@ async function fetchJson<T>(url: string, options: FetchOptions = {}): Promise<T>
         if (error instanceof ApiError) {
           throw error;
         }
-        throw new ApiError(error?.message ?? '네트워크 오류가 발생했습니다.');
+        const errorMessage = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string' 
+          ? error.message 
+          : '네트워크 오류가 발생했습니다.';
+        throw new ApiError(errorMessage);
       }
       
       // 재시도 (1차: 400ms, 2차: 800ms, 3차: 1600ms 대기 후 재시도)

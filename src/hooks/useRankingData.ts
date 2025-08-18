@@ -73,7 +73,7 @@ export function useRankingData(genre: GenreType = 'romance', initialData?: Comic
         // 최초 호출이므로 ref도 1로 동기화
         pageRef.current = 1;
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       // AbortError는 무시 (의도적인 취소)
       if (!abortController.signal.aborted) {
         const errorMessage = error instanceof ApiError 
@@ -124,7 +124,7 @@ export function useRankingData(genre: GenreType = 'romance', initialData?: Comic
       }));
       // ref도 동기화 (중요!)
       pageRef.current = nextPage;
-    } catch (error: any) {
+    } catch (error: unknown) {
       const errorMessage = error instanceof ApiError 
         ? error.message 
         : '추가 데이터를 불러오는데 실패했습니다.';
@@ -161,7 +161,7 @@ export function useRankingData(genre: GenreType = 'romance', initialData?: Comic
     }
 
     refreshData();
-  }, [genre, refreshData, initialData]);
+  }, [genre, refreshData, initialData, isFirstMount]);
 
   // 무한스크롤 재시도 함수
   const retryLoadMore = useCallback(() => {
