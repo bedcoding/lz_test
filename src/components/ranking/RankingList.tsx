@@ -4,12 +4,14 @@ import { ComicRankItem } from '@/types/ranking';
 import RankingItem from './RankingItem';
 import SkeletonItem from '@/components/common/SkeletonItem';
 import Button from '@/components/common/Button';
+import HelpIcon from '@/components/common/HelpIcon';
 
 // 메인 리스트 컨테이너
 const ListContainer = styled.ul.attrs({
   role: 'list',                    // 명시적 리스트 역할 선언
   'aria-label': '웹툰 랭킹 목록'     // 스크린 리더용 레이블
 })`
+  position: relative;      // HelpIcon 플로팅을 위한 relative positioning
   display: flex;
   flex-direction: column;  // RankingItem 리스트들 세로 배치
   gap: ${({ theme }) => theme.spacing.md};
@@ -166,6 +168,28 @@ export default function RankingList({
       aria-busy={isLoadingMore || (isLoading && items.length === 0) || undefined}  // 로딩 상태 전달
       aria-live="polite"  // 콘텐츠의 변화를 스크린 리더에게 전달
     >
+      <HelpIcon 
+        title="RankingList - 무한스크롤 리스트"
+        description="RankingList 컴포넌트에서 TanStack Query와 Intersection Observer를 활용하여 웹툰 랭킹을 무한스크롤 방식으로 로딩합니다."
+        techStack={[
+          'TanStack Query useInfiniteQuery', 
+          'Intersection Observer API', 
+          'React useRef',
+          'Error Boundary'
+        ]}
+        implementation={[
+          'useInfiniteQuery로 페이지별 데이터 캐싱',
+          'Intersection Observer로 스크롤 감지 및 자동 로딩',
+          'getNextPageParam으로 다음 페이지 결정 로직',
+          '로딩/에러 상태별 UI 분기 처리',
+          'optimistic updates로 부드러운 UX',
+          '재시도 메커니즘과 에러 복구',
+          'prefetching으로 성능 최적화'
+        ]}
+        position="top-left"
+      />
+      
+      {/* 랭킹 아이템 목록 */}
       {items.map((item) => (
         <ListItem key={item.id}>
           <RankingItem item={item} />

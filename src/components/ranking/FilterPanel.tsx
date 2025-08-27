@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { FilterState, FilterType, GenreType, GenreState } from '@/types/ranking';
 import { getFilterLabel, getGenreLabel } from '@/utils/filter';
 import Button from '@/components/common/Button';
+import HelpIcon from '@/components/common/HelpIcon';
 
 // 메인 컨테이너 - 필터 섹션들을 세로로 스택
 const FilterPanelContainer = styled.div`
+  position: relative;      // HelpIcon 플로팅을 위한 relative positioning
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.md};
   background-color: ${({ theme }) => theme.colors.background};
@@ -86,6 +88,26 @@ export default function FilterPanel({
 
   return (
     <FilterPanelContainer className={className}>
+      <HelpIcon 
+        title="FilterPanel - 필터링 시스템"
+        description="FilterPanel 컴포넌트에서 사용자가 웹툰을 연재 상태와 무료회차 여부로 필터링할 수 있는 시스템입니다."
+        techStack={[
+          'React Custom Hooks',
+          'TypeScript Union Types',
+          'Styled Components'
+        ]}
+        implementation={[
+          'useFilter 커스텀 훅으로 필터 상태 관리',
+          '다중 필터 조건 처리 (ongoing, completed, freeEpisodes)',
+          'TypeScript로 필터 타입 안전성 보장',
+          '실시간 필터링 결과 반영',
+          'Button 컴포넌트 재사용으로 일관된 UI',
+          'ARIA 속성으로 스크린 리더 지원 (role, aria-label, aria-pressed)',
+          '반응형 레이아웃 (모바일에서 세로 배치)'
+        ]}
+        position="top-left"
+      />
+      
       {/* 필터 행 */}
       <FilterRow>
         <FilterLabel>필터</FilterLabel>

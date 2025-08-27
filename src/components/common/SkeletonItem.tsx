@@ -1,6 +1,7 @@
 // 스켈레톤 로딩 아이템
 import { memo } from 'react';
 import styled, { keyframes } from 'styled-components';
+import HelpIcon from '@/components/common/HelpIcon';
 
 // 시머 애니메이션 - 로딩 상태를 나타내는 좌우 이동 효과
 const shimmer = keyframes`
@@ -14,6 +15,7 @@ const shimmer = keyframes`
 
 // 메인 컨테이너 - RankingItem의 ItemContainer와 동일한 레이아웃
 const SkeletonContainer = styled.div`
+  position: relative;      // HelpIcon 플로팅을 위한 relative positioning
   display: flex;
   align-items: flex-start;
   gap: ${({ theme }) => theme.spacing.md};
@@ -120,13 +122,37 @@ const SkeletonFreeEpisode = styled(SkeletonBase)`
 interface SkeletonItemProps {
   className?: string;
   mode?: 'full' | 'minimal';
+  showHelp?: boolean;  // HelpIcon 표시 여부
 }
 
 // 로딩 상태 변경 시 불필요한 리렌더링 방지를 위한 memo 추가
-const SkeletonItem = memo(function SkeletonItem({ className, mode = 'full' }: SkeletonItemProps) {
+const SkeletonItem = memo(function SkeletonItem({ className, mode = 'full', showHelp = false }: SkeletonItemProps) {
   if (mode === 'minimal') {
     return (
       <SkeletonContainer className={className}>
+        {showHelp && (
+          <HelpIcon 
+            title="스켈레톤 로딩 컴포넌트"
+            description="실제 데이터를 로딩하는 동안 사용자에게 로딩 상태를 시각적으로 표시하는 플레이스홀더 컴포넌트입니다."
+            techStack={[
+              'CSS Keyframes Animation', 
+              'Styled Components',
+              'React.memo 최적화',
+              'Responsive Design'
+            ]}
+            implementation={[
+              'shimmer 키프레임 애니메이션으로 로딩 효과 구현',
+              'RankingItem과 동일한 레이아웃 구조 유지',
+              'linear-gradient 배경으로 부드러운 애니메이션',
+              'full/minimal 모드로 다양한 로딩 상황 대응',
+              'React.memo로 불필요한 리렌더링 방지',
+              '반응형 디자인으로 모바일 환경 최적화',
+              '접근성 고려한 neutral한 색상 사용'
+            ]}
+            position="top-right"
+            size="sm"
+          />
+        )}
         <SkeletonThumbnail />
         <SkeletonContent>
           {/* 빈 공간 - 데이터 로딩을 기다림 */}
@@ -137,6 +163,29 @@ const SkeletonItem = memo(function SkeletonItem({ className, mode = 'full' }: Sk
 
   return (
     <SkeletonContainer className={className}>
+      {showHelp && (
+        <HelpIcon 
+          title="스켈레톤 로딩 컴포넌트"
+          description="실제 데이터를 로딩하는 동안 사용자에게 로딩 상태를 시각적으로 표시하는 플레이스홀더 컴포넌트입니다."
+          techStack={[
+            'CSS Keyframes Animation', 
+            'Styled Components',
+            'React.memo 최적화',
+            'Responsive Design'
+          ]}
+          implementation={[
+            'shimmer 키프레임 애니메이션으로 로딩 효과 구현',
+            'RankingItem과 동일한 레이아웃 구조 유지',
+            'linear-gradient 배경으로 부드러운 애니메이션',
+            'full/minimal 모드로 다양한 로딩 상황 대응',
+            'React.memo로 불필요한 리렌더링 방지',
+            '반응형 디자인으로 모바일 환경 최적화',
+            '접근성 고려한 neutral한 색상 사용'
+          ]}
+          position="top-right"
+          size="sm"
+        />
+      )}
       <SkeletonThumbnail />
       
       <SkeletonContent>

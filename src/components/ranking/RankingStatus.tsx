@@ -1,9 +1,11 @@
 // 랭킹 변동을 나타내는 컴포넌트
 import styled from 'styled-components';
 import { getRankingStatus, getRankingIcon } from '@/utils/ranking';
+import HelpIcon from '@/components/common/HelpIcon';
 
 // 메인 컨테이너 - 아이콘과 텍스트를 가로로 정렬, 상태에 따라 색상 변경
 const StatusContainer = styled.div<{ $status: 'up' | 'down' | 'same' }>`
+  position: relative;      // HelpIcon 플로팅을 위한 relative positioning
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.xs};

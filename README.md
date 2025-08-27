@@ -133,6 +133,39 @@ lezhin-ranking/
 │       └── ...
 ├── vitest.config.ts           # Vitest 설정
 └── public/                    # 정적 파일
+
+## 📦 컴포넌트 구성
+
+### 🎯 Core Pages & Components
+| 컴포넌트 | 위치 | 역할 | HelpIcon |
+|---------|------|------|----------|
+| **HomePage** | `src/app/page.tsx` | SSR+CSR 하이브리드 메인 페이지 | ✅ |
+| **RankingPageClientQuery** | `src/components/RankingPageClientQuery.tsx` | TanStack Query 기반 클라이언트 컴포넌트 | ❌ |
+| **QueryHydration** | `src/components/QueryHydration.tsx` | SSR 데이터를 클라이언트로 하이드레이션 | ❌ |
+
+### 🎨 Layout Components
+| 컴포넌트 | 위치 | 역할 | HelpIcon |
+|---------|------|------|----------|
+| **Container** | `src/components/layout/Container.tsx` | 페이지 레이아웃 컨테이너 | ❌ |
+| **ThemeProvider** | `src/components/layout/ThemeProvider.tsx` | Styled Components 테마 제공 | ❌ |
+| **StyledComponentsRegistry** | `src/components/layout/StyledComponentsRegistry.tsx` | SSR CSS-in-JS 최적화 | ❌ |
+
+### 🎛️ Common Components
+| 컴포넌트 | 위치 | 역할 | HelpIcon |
+|---------|------|------|----------|
+| **Button** | `src/components/common/Button.tsx` | 재사용 가능한 버튼 컴포넌트 | ❌ |
+| **HelpIcon** | `src/components/common/HelpIcon.tsx` | 기술 스택/구현 설명 모달 | ❌ |
+| **SkeletonItem** | `src/components/common/SkeletonItem.tsx` | 로딩 스켈레톤 UI | ❌ |
+
+### 📊 Ranking Components
+| 컴포넌트 | 위치 | 역할 | HelpIcon |
+|---------|------|------|----------|
+| **FilterPanel** | `src/components/ranking/FilterPanel.tsx` | 연재상태/무료회차 필터링 | ✅ |
+| **GenreFilter** | `src/components/ranking/GenreFilter.tsx` | 로맨스/드라마 장르 선택 | ❌ |
+| **RankingFilter** | `src/components/ranking/RankingFilter.tsx` | 연재상태 필터 버튼 | ❌ |
+| **RankingList** | `src/components/ranking/RankingList.tsx` | 무한스크롤 랭킹 리스트 | ✅ |
+| **RankingItem** | `src/components/ranking/RankingItem.tsx` | 개별 웹툰 아이템 표시 | ✅ (웹툰정보) |
+| **RankingStatus** | `src/components/ranking/RankingStatus.tsx` | 순위 변동 상태 표시 | ✅ (순위변동) |
 ```
 
 ## 🚀 시작하기

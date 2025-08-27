@@ -1,14 +1,21 @@
 'use client';
 
 import { useEffect } from 'react';
+import styled from 'styled-components';
 import FilterPanel from '@/components/ranking/FilterPanel';
 import RankingList from '@/components/ranking/RankingList';
 import QueryHydration from '@/components/QueryHydration';
+import HelpIcon from '@/components/common/HelpIcon';
 import { useRankingDataQuery } from '@/hooks/useRankingDataQuery';
 import { useFilter } from '@/hooks/useFilter';
 import { useGenre } from '@/hooks/useGenre';
 import { useInfiniteScrollQuery } from '@/hooks/useInfiniteScrollQuery';
 import { ComicRankApiSuccessResponse } from '@/types/ranking';
+
+// 페이지 컨테이너 - HelpIcon 플로팅을 위한 relative positioning
+const PageContainer = styled.div`
+  position: relative;
+`;
 
 interface RankingPageClientQueryProps {
   initialResponse?: ComicRankApiSuccessResponse | null;
@@ -75,10 +82,7 @@ export default function RankingPageClientQuery(props?: RankingPageClientQueryPro
   ]);
 
   return (
-    <QueryHydration 
-      initialResponse={initialResponse}
-    >
-      {/* 통합 필터 패널 */}
+    <PageContainer>
       <FilterPanel
         filters={filters}
         onFilterChange={handleFilterToggle}
@@ -122,6 +126,6 @@ export default function RankingPageClientQuery(props?: RankingPageClientQueryPro
           </div>
         )}
       </div>
-    </QueryHydration>
+    </PageContainer>
   );
 }

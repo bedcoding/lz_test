@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { ComicRankItem } from '@/types/ranking';
 import RankingStatus from './RankingStatus';
+import HelpIcon from '@/components/common/HelpIcon';
 import { 
   getScheduleText, 
   getContentsStateText, 
@@ -11,6 +12,7 @@ import {
 
 // 메인 컨테이너 - 썸네일과 콘텐츠를 가로로 배치
 const ItemContainer = styled.div`
+  position: relative;      // HelpIcon 플로팅을 위한 relative positioning
   display: flex;
   align-items: flex-start;  // 상단 정렬 (썸네일 높이가 다를 수 있음)
   gap: ${({ theme }) => theme.spacing.md};  // 썸네일과 콘텐츠 사이 간격
@@ -245,6 +247,48 @@ const RankingItem = memo(function RankingItem({ item, className }: RankingItemPr
       className={className}
       aria-labelledby={`title-${item.id}`}
     >
+      {/* 웹툰 아이템 정보 HelpIcon */}
+      <HelpIcon 
+        title="RankingItem - 웹툰 정보"
+        description="RankingItem 컴포넌트에서 개별 웹툰의 썸네일, 제목, 작가명, 연재 상태, 무료회차 정보를 표시하는 부분입니다."
+        techStack={[
+          'Next.js Image',
+          'Styled Components',
+          'React.memo',
+          'ARIA 접근성'
+        ]}
+        implementation={[
+          'next/image로 이미지 지연 로딩 및 자동 최적화',
+          'aspect-ratio 유지로 레이아웃 시프트 방지', 
+          'Shimmer 애니메이션으로 로딩 상태 표시',
+          'onLoad/onError 이벤트 핸들링',
+          'React.memo로 성능 최적화',
+          '반응형 썸네일 크기 조절 (모바일 대응)',
+          'sr-only 클래스로 스크린 리더 접근성 향상'
+        ]}
+        position="bottom-right"
+        size="sm"
+      />
+      
+      {/* 랭킹 변동 상태 HelpIcon */}
+      <HelpIcon 
+        title="RankingStatus - 순위 변동"
+        description="RankingStatus 컴포넌트에서 현재 순위와 이전 순위를 비교하여 상승/하락/유지 상태를 시각화합니다."
+        techStack={[
+          'TypeScript Union Types',
+          'Styled Components',
+          '동적 색상 변경'
+        ]}
+        implementation={[
+          'getRankingStatus 유틸로 랭킹 변동 상태 계산 (상승/하락/유지)',
+          '상태별 동적 색상 변경 (up: 빨강, down: 파랑, same: 회색)',
+          '아이콘과 숫자로 직관적 시각화 (↑↓-)',
+          'TypeScript로 상태 타입 안전성 보장 (up | down | same)'
+        ]}
+        position="bottom-left"
+        size="sm"
+      />
+      
       <Thumbnail>
         {/* 이미지 로딩 애니메이션 */}
         <ImagePlaceholder className={imageLoaded ? 'hide' : ''} />
